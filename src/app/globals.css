@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/*
+  Palette — reconciled per the discovery audit (the two client reference
+  images disagreed on Rich Black and carried mismatched neutral sets; this
+  is the single canonical system built from them, contrast-checked for
+  body text and UI states rather than inherited as-is).
+*/
+:root {
+  --bg: #faf5ef;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2ece4;
+  --ink: #241814;
+  --ink-muted: #6b5a4a;
+  --ink-faint: #a18f7a;
+  --line: #e7dccb;
+  --line-strong: #d8c8b3;
+  --gold: #8c5a2b;
+  --gold-soft: #b88352;
+  --champagne: #ad7f45;
+  --overlay: rgba(21, 14, 10, 0.55);
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Manrope", -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #150e0a;
+    --bg-raised: #1e1510;
+    --bg-sunken: #1a120d;
+    --ink: #f2ece4;
+    --ink-muted: #a29789;
+    --ink-faint: #776557;
+    --line: #2e221b;
+    --line-strong: #3a261d;
+    --gold: #d7b07a;
+    --gold-soft: #b88352;
+    --champagne: #e8c68f;
+    --overlay: rgba(21, 14, 10, 0.65);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #150e0a;
+  --bg-raised: #1e1510;
+  --bg-sunken: #1a120d;
+  --ink: #f2ece4;
+  --ink-muted: #a29789;
+  --ink-faint: #776557;
+  --line: #2e221b;
+  --line-strong: #3a261d;
+  --gold: #d7b07a;
+  --gold-soft: #b88352;
+  --champagne: #e8c68f;
+  --overlay: rgba(21, 14, 10, 0.65);
+}
+
+:root[data-theme="light"] {
+  --bg: #faf5ef;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2ece4;
+  --ink: #241814;
+  --ink-muted: #6b5a4a;
+  --ink-faint: #a18f7a;
+  --line: #e7dccb;
+  --line-strong: #d8c8b3;
+  --gold: #8c5a2b;
+  --gold-soft: #b88352;
+  --champagne: #ad7f45;
+  --overlay: rgba(21, 14, 10, 0.55);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-bg-sunken: var(--bg-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-champagne: var(--champagne);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+/* Modern UX & Visual Elevation Utilities */
+.glass-panel {
+  background: var(--bg-raised);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+}
+
+.glass-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--gold-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(36, 24, 20, 0.08);
+}
+
+.luxury-glow {
+  box-shadow: 0 0 25px -5px rgba(140, 90, 43, 0.15);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-sunken);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
