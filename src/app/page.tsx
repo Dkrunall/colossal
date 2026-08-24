@@ -1,21 +1,22 @@
 import Hero from "@/components/home/Hero";
-import Intro from "@/components/home/Intro";
+import ExperienceExtraordinary from "@/components/home/ExperienceExtraordinary";
 import BrandsShowcase from "@/components/home/BrandsShowcase";
-import Experiences from "@/components/home/Experiences";
-import Snapshot from "@/components/home/Snapshot";
-import PressStrip from "@/components/home/PressStrip";
-import ReservationsCTA from "@/components/home/ReservationsCTA";
+import FeaturedSpotlight from "@/components/home/FeaturedSpotlight";
+import OurStory from "@/components/home/OurStory";
+import VisionariesSection from "@/components/home/VisionariesSection";
+import AwardsSection from "@/components/home/AwardsSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Intro />
+      <ExperienceExtraordinary />
       <BrandsShowcase />
-      <Experiences />
-      <Snapshot />
-      <PressStrip />
-      <ReservationsCTA />
+      <FeaturedSpotlight />
+      <OurStory />
+      <VisionariesSection />
+      <AwardsSection />
     </>
   );
 }
+

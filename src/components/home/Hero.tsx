@@ -1,212 +1,117 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ensureGsap } from "@/lib/gsap";
-import SplitHeading from "@/components/motion/SplitHeading";
 
-const HERO_SCENES = [
+const HERO_SLIDES = [
   {
     id: "epitome-mumbai",
     name: "Epitome Mumbai",
-    tagline: "Fine Dining & Lounge · Lower Parel",
-    imageDark: "/images/hero_bg.png",
-    imageLight: "/images/hero_bg_light.png",
+    tagline: "Fine Dining & Architectural Lounge · Lower Parel",
+    image: "/images/hero_bg.png",
   },
   {
-    id: "fine-dining",
+    id: "signature-dining",
     name: "Signature Culinary",
-    tagline: "Chef-Led Menus & Tasting Rooms",
-    imageDark: "/images/fine_dining.png",
-    imageLight: "/images/fine_dining_light.png",
+    tagline: "Chef-Led Tasting Rooms & Bespoke Menus",
+    image: "/images/fine_dining.png",
   },
   {
     id: "kynd-cafe",
     name: "Kynd Café & Bar",
-    tagline: "Day-to-Night Sanctuary · Pune",
-    imageDark: "/images/kynd_cafe.png",
-    imageLight: "/images/kynd_cafe_light.png",
+    tagline: "All-Day Café to Low-Lit Night Lounge · Pune",
+    image: "/images/kynd_cafe.png",
   },
   {
     id: "live-stage",
     name: "Epitome Live Stage",
-    tagline: "Acoustic Nights & Live Music",
-    imageDark: "/images/live_stage.png",
-    imageLight: "/images/live_stage_light.png",
+    tagline: "Acoustic Sets & Curated Entertainment",
+    image: "/images/live_stage.png",
   },
 ];
 
 export default function Hero() {
-  const [activeSceneIndex, setActiveSceneIndex] = useState(0);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-  const bgRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
 
-  const activeScene = HERO_SCENES[activeSceneIndex];
-  const activeImage = theme === "light" ? activeScene.imageLight : activeScene.imageDark;
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
-    const updateTheme = () => {
-      const current = (document.documentElement.getAttribute("data-theme") as "light" | "dark") || "light";
-      setTheme(current);
-    };
-    updateTheme();
-
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-
-    const bg = bgRef.current;
-    const content = contentRef.current;
-    if (!bg || !content) return () => observer.disconnect();
-
-    const { gsap, ScrollTrigger } = ensureGsap();
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const items = content.querySelectorAll("[data-hero-anim]");
-    if (reduceMotion) {
-      gsap.set(items, { opacity: 1, y: 0 });
-    } else {
-      gsap.set(items, { opacity: 0, y: 20 });
-      gsap.to(items, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
-    }
-
-    let st: ReturnType<typeof ScrollTrigger.create> | undefined;
-    if (!reduceMotion) {
-      st = ScrollTrigger.create({
-        trigger: bg.parentElement,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        onUpdate: (self) => {
-          gsap.set(bg, { yPercent: self.progress * 15, scale: 1 + self.progress * 0.05 });
-        },
-      });
-    }
-
-    return () => {
-      st?.kill();
-      observer.disconnect();
-    };
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
+    }, 7000);
+    return () => clearInterval(timer);
   }, []);
 
-  const isLight = theme === "light";
+  const slide = HERO_SLIDES[current];
 
   return (
-    <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#150e0a] pt-32 pb-16">
-      {/* 100% Full Viewport Background Photo */}
-      <div ref={bgRef} className="absolute inset-0 w-full h-full will-change-transform">
-        <Image
-          key={activeImage}
-          src={activeImage}
-          alt={activeScene.name}
-          fill
-          priority
-          className="object-cover object-center transition-opacity duration-700"
-          sizes="100vw"
-        />
-      </div>
-
-      {/* Cinematic Black Overlay for High Contrast */}
-      <div className="absolute inset-0 bg-black/45 pointer-events-none transition-opacity duration-700" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#150e0a] via-black/30 to-black/20 pointer-events-none" />
-
-      {/* Hero Content Container */}
-      <div ref={contentRef} className="relative z-10 w-full px-6 md:px-12">
-        <div className="mx-auto max-w-[1560px] flex flex-col justify-between min-h-[75vh]">
-          
-          {/* Top Editorial Block */}
-          <div className="max-w-4xl pt-6">
-            {/* Clean Eyebrow */}
-            <div data-hero-anim className="inline-flex items-center gap-2 mb-6">
-              <span className="h-2 w-2 rounded-full bg-champagne animate-pulse" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-champagne font-body">
-                Colossal Hospitality Group
-              </span>
-            </div>
-
-            {/* Clean Serif Headline */}
-            <div data-hero-anim>
-              <SplitHeading
-                text="Places worth returning to, twice."
-                as="h1"
-                className="font-display text-4xl italic leading-[1.04] sm:text-6xl lg:text-7xl xl:text-[5.5rem] text-[#f7f1e8]"
-              />
-            </div>
-
-            {/* Sub-narrative */}
-            <p data-hero-anim className="mt-6 max-w-[48ch] text-base leading-relaxed sm:text-lg font-normal text-[#f7f1e8]/85">
-              Architectural dining rooms, curated cocktail lounges, and live music stages across Mumbai &amp; Pune.
-            </p>
-
-            {/* Clean Action Buttons */}
-            <div data-hero-anim className="mt-9 flex flex-wrap items-center gap-4">
-              <Link
-                href="/reservations"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-2xl transition-all duration-300 hover:bg-gold-soft hover:shadow-gold/30 hover:-translate-y-0.5"
-              >
-                <span>Book a Reservation</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="/brands"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/40 px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#f7f1e8] backdrop-blur-md transition-all duration-300 hover:border-champagne hover:bg-black/60 hover:text-champagne"
-              >
-                Explore Portfolio
-              </Link>
-            </div>
-          </div>
-
-          {/* Bottom Block — Scene Switcher & Metrics */}
-          <div data-hero-anim className="mt-14 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            {/* Clean Scene Switcher Pills */}
-            <div className="flex flex-wrap gap-2">
-              {HERO_SCENES.map((scene, idx) => (
-                <button
-                  key={scene.id}
-                  type="button"
-                  onClick={() => setActiveSceneIndex(idx)}
-                  className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 backdrop-blur-md ${
-                    activeSceneIndex === idx
-                      ? "bg-gold text-white shadow-lg"
-                      : "bg-black/50 text-white/80 border border-white/20 hover:bg-black/70 hover:text-white"
-                  }`}
-                >
-                  0{idx + 1} · {scene.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Clean Group Metrics */}
-            <div className="flex items-center gap-6 text-xs text-[#f7f1e8]/85">
-              <div>
-                <span className="font-display text-lg font-bold text-champagne">6</span>
-                <span className="uppercase tracking-wider text-[0.68rem] text-[#f7f1e8]/65 ml-2">Brands</span>
-              </div>
-              <div className="h-3 w-px bg-white/25" />
-              <div>
-                <span className="font-display text-lg font-bold text-champagne">2</span>
-                <span className="uppercase tracking-wider text-[0.68rem] text-[#f7f1e8]/65 ml-2">Cities</span>
-              </div>
-              <div className="h-3 w-px bg-white/25" />
-              <div>
-                <span className="font-display text-lg font-bold text-champagne">4.9 ★</span>
-                <span className="uppercase tracking-wider text-[0.68rem] text-[#f7f1e8]/65 ml-2">Rating</span>
-              </div>
-            </div>
-          </div>
-
+    <section className="relative h-[85vh] sm:h-[92vh] w-full overflow-hidden bg-[#050505]">
+      {/* Background Image Carousel with Smooth Crossfade */}
+      {HERO_SLIDES.map((item, idx) => (
+        <div
+          key={item.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
+        >
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            priority={idx === 0}
+            className="object-cover object-center brightness-[0.85]"
+            sizes="100vw"
+          />
         </div>
+      ))}
+
+      {/* Luxury Cinematic Gradient Vignettes */}
+      <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#050505] via-transparent to-black/50 pointer-events-none" />
+      <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/40 via-transparent to-[#050505]/90 pointer-events-none" />
+
+      {/* Bottom Carousel Navigation Bar `<  01/04  >` */}
+      <div className="absolute bottom-8 sm:bottom-12 inset-x-0 z-30 flex flex-col items-center justify-center gap-3">
+        <div className="flex items-center gap-5 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/85 px-6 py-2 backdrop-blur-xl shadow-2xl">
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="Previous Slide"
+            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-sm cursor-pointer"
+          >
+            ❮
+          </button>
+
+          <div className="flex items-center gap-2 font-luxury text-sm md:text-base tracking-[0.2em] text-[#f7f3eb]">
+            <span className="text-[#dfc18a] font-bold">0{current + 1}</span>
+            <span className="text-[#736b60]">/</span>
+            <span>0{HERO_SLIDES.length}</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Next Slide"
+            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-sm cursor-pointer"
+          >
+            ❯
+          </button>
+        </div>
+
+        {/* Current Venue Badge */}
+        <p className="text-[0.68rem] sm:text-xs font-semibold uppercase tracking-[0.24em] text-[#dfc18a]/90 drop-shadow-md">
+          {slide.name} · {slide.tagline.split("·")[1] || "Colossal Hospitality"}
+        </p>
       </div>
     </section>
   );
 }
+
+
 
 
 

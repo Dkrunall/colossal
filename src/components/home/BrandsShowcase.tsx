@@ -1,125 +1,160 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { brands, type Brand } from "@/lib/site-data";
-import Plate from "@/components/ui/Plate";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Container from "@/components/ui/Container";
-
-const CATEGORIES = ["All", "Fine Dining", "Café & Bar", "Entertainment", "Upcoming"] as const;
-type Category = (typeof CATEGORIES)[number];
-
-function BrandCard({ brand }: { brand: Brand }) {
-  const isUpcoming = brand.status === "upcoming";
-  return (
-    <Link
-      href={`/brands/${brand.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-line bg-bg-raised/70 p-4 transition-all duration-500 hover:border-gold-soft hover:bg-bg-raised hover:shadow-xl hover:-translate-y-1.5"
-    >
-      <div className="relative overflow-hidden rounded-2xl">
-        <Plate
-          tone={brand.tone}
-          label={brand.name}
-          imageSrc={brand.imageSrc}
-          caption={isUpcoming ? "Coming Soon" : "Active Venue"}
-          ratio="aspect-[4/5]"
-          className="transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute left-4 top-4">
-          <span
-            className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] backdrop-blur-md ${
-              isUpcoming
-                ? "border border-gold/40 bg-gold/20 text-gold"
-                : "border border-white/20 bg-black/40 text-white"
-            }`}
-          >
-            {isUpcoming ? "Upcoming Concept" : brand.city}
-          </span>
-        </div>
-      </div>
-
-      <div className="mt-5 flex flex-1 flex-col justify-between px-1 pb-1">
-        <div>
-          <div className="flex items-center justify-between">
-            <h3 className="font-display text-2xl text-ink transition-colors group-hover:text-gold">
-              {brand.name}
-            </h3>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-line bg-bg-sunken text-ink-muted transition-all duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-white">
-              →
-            </span>
-          </div>
-          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-ink-faint">
-            {brand.kind} {brand.city !== "Upcoming" && `· ${brand.city}`}
-          </p>
-          <p className="mt-3 text-sm text-ink-muted line-clamp-2">{brand.tagline}</p>
-        </div>
-
-        <div className="mt-5 flex items-center justify-between border-t border-line/60 pt-3 text-[0.72rem] font-semibold uppercase tracking-wider text-gold">
-          <span>Explore Room</span>
-          <span className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">View →</span>
-        </div>
-      </div>
-    </Link>
-  );
-}
+import Image from "next/image";
+import { brands } from "@/lib/site-data";
 
 export default function BrandsShowcase() {
-  const [activeTab, setActiveTab] = useState<Category>("All");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const filteredBrands = brands.filter((brand) => {
-    if (activeTab === "All") return true;
-    if (activeTab === "Fine Dining") return brand.kind.includes("Fine Dining");
-    if (activeTab === "Café & Bar") return brand.kind.includes("Café");
-    if (activeTab === "Entertainment") return brand.kind.includes("Entertainment");
-    if (activeTab === "Upcoming") return brand.status === "upcoming";
-    return true;
-  });
+  const prevBrand = () => {
+    const nextIdx = currentIndex === 0 ? brands.length - 1 : currentIndex - 1;
+    setCurrentIndex(nextIdx);
+    scrollToCard(nextIdx);
+  };
+
+  const nextBrand = () => {
+    const nextIdx = currentIndex === brands.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(nextIdx);
+    scrollToCard(nextIdx);
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    const cards = scrollContainerRef.current.children;
+    if (cards[index]) {
+      (cards[index] as HTMLElement).scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  };
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const scrollLeft = scrollContainerRef.current.scrollLeft;
+    const cardWidth = 360;
+    const newIdx = Math.round(scrollLeft / cardWidth);
+    if (newIdx >= 0 && newIdx < brands.length && newIdx !== currentIndex) {
+      setCurrentIndex(newIdx);
+    }
+  };
 
   return (
-    <section className="bg-bg py-24 md:py-32">
-      <Container>
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <SectionHeading eyebrow="Our Portfolio" title="One group, six distinct rooms." />
-            <p className="mt-4 max-w-[48ch] text-ink-muted">
-              Each brand keeps its own identity — its own room, its own crowd. Select any concept to step through to its dedicated venue site.
-            </p>
-          </div>
+    <section className="bg-[#050505] py-24 md:py-32 border-b border-[#1c1916] overflow-hidden">
+      <div className="mx-auto max-w-[1560px] px-6 md:px-12">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient drop-shadow-[0_2px_15px_rgba(223,193,138,0.2)]">
+            OUR BRANDS
+          </h2>
+          <p className="mt-4 text-xs sm:text-sm md:text-base text-[#b0a89d] leading-relaxed max-w-2xl mx-auto font-light">
+            A portfolio of distinct living experiences, each holding its own character, designed around how people live, gather, and celebrate.
+          </p>
+        </div>
 
-          {/* Interactive Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-2 pt-2 md:pt-0">
-            {CATEGORIES.map((tab) => (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-gold text-white shadow-md scale-105"
-                    : "border border-line bg-bg-raised text-ink-muted hover:border-gold-soft hover:bg-bg-sunken hover:text-ink"
-                }`}
+
+
+        {/* Carousel Container */}
+        <div
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          className="flex gap-6 sm:gap-8 overflow-x-auto pb-6 custom-scrollbar snap-x snap-mandatory px-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {brands.map((brand, idx) => {
+            const isUpcoming = brand.status === "upcoming";
+            const imageSrc = brand.imageSrc || (idx % 2 === 0 ? "/images/hero_bg.png" : "/images/fine_dining.png");
+            
+            return (
+              <div
+                key={brand.slug}
+                className="flex-shrink-0 w-[280px] sm:w-[340px] md:w-[380px] snap-center"
               >
-                {tab}
-              </button>
-            ))}
-          </div>
+                <Link
+                  href={`/brands/${brand.slug}`}
+                  className="group relative block aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#26221c] bg-[#11100f] transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.85)]"
+                >
+                  {/* Card Background Image */}
+                  <Image
+                    src={imageSrc}
+                    alt={brand.name}
+                    fill
+                    className="object-cover object-center brightness-[0.82] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                    sizes="(max-width: 768px) 280px, 380px"
+                  />
+
+                  {/* High Legibility Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-95" />
+
+                  {/* Top City / Status Badge */}
+                  <div className="absolute top-5 left-5">
+                    <span className="rounded-full border border-white/20 bg-black/60 px-3.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-[#f7f3eb] backdrop-blur-md">
+                      {isUpcoming ? "Upcoming" : brand.city}
+                    </span>
+                  </div>
+
+                  {/* Bottom Content Overlay */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end">
+                    <h3 className="font-luxury text-2xl sm:text-3xl font-semibold tracking-[0.06em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
+                      {brand.name} {brand.city !== "Upcoming" && brand.city !== "Multi-city" ? `· ${brand.city}` : ""}
+                    </h3>
+
+                    
+                    <p className="mt-2 text-xs text-[#b0a89d] line-clamp-2 leading-relaxed font-light">
+                      {brand.description}
+                    </p>
+
+                    <div className="mt-5 flex items-center justify-between border-t border-[#332e27] pt-4">
+                      <span className="text-[0.72rem] font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all duration-300 group-hover:translate-x-1">
+                        Explore →
+                      </span>
+                      <span className="text-[0.65rem] uppercase tracking-wider text-[#736b60]">
+                        {brand.kind}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Brand Grid */}
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredBrands.map((brand) => (
-            <BrandCard key={brand.slug} brand={brand} />
-          ))}
+        {/* Bottom Carousel Controls `<  01/06  >` */}
+        <div className="mt-12 flex items-center justify-center gap-6">
+          <button
+            type="button"
+            onClick={prevBrand}
+            aria-label="Previous Brand"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#38332c] bg-[#121110] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
+          >
+            ❮
+          </button>
+
+          <div className="flex items-center gap-2 font-luxury text-base tracking-[0.2em] text-[#f7f3eb]">
+            <span className="text-[#dfc18a] font-bold">0{currentIndex + 1}</span>
+            <span className="text-[#736b60]">/</span>
+            <span>0{brands.length}</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={nextBrand}
+            aria-label="Next Brand"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#38332c] bg-[#121110] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
+          >
+            ❯
+          </button>
         </div>
 
-        {filteredBrands.length === 0 && (
-          <div className="mt-12 rounded-3xl border border-line bg-bg-raised py-16 text-center text-ink-muted">
-            No concepts match the selected filter.
-          </div>
-        )}
-      </Container>
+      </div>
     </section>
   );
 }
+
+
 

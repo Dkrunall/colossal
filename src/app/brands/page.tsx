@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import Container from "@/components/ui/Container";
-import RevealGroup from "@/components/motion/RevealGroup";
-import BrandTile from "@/components/brands/BrandTile";
+import Image from "next/image";
+import Link from "next/link";
 import { brands } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Our Brands",
-  description: "The full Colossal Hospitality portfolio — live and upcoming.",
+  title: "Our Brands · Colossal Hospitality Group",
+  description: "The full Colossal Hospitality portfolio — live and upcoming addresses across Mumbai & Pune.",
 };
 
 export default function BrandsPage() {
@@ -15,33 +13,151 @@ export default function BrandsPage() {
   const upcoming = brands.filter((b) => b.status === "upcoming");
 
   return (
-    <>
-      <PageHero
-        eyebrow="Our Brands"
-        title="Six rooms. One growing portfolio."
-        lede="Each brand below keeps its own identity, its own city, its own crowd. Select one to preview its story, then step through to its dedicated site."
-      />
+    <div className="bg-[#050505] text-[#f7f3eb]">
+      
+      {/* Brands Hero Section */}
+      <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#050505] flex items-center justify-center border-b border-[#1c1916]">
+        <Image
+          src="/images/fine_dining.png"
+          alt="Colossal Portfolio Brands"
+          fill
+          priority
+          className="object-cover object-center brightness-[0.70] scale-105"
+          sizes="100vw"
+        />
+        
+        {/* Luxury Vignette Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#dfc18a]/10 blur-[150px] pointer-events-none" />
 
-      <section className="py-20 md:py-28">
-        <Container>
-          <RevealGroup className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
-            {live.map((brand) => (
-              <BrandTile key={brand.slug} brand={brand} />
-            ))}
-          </RevealGroup>
-        </Container>
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/80 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
+            <span className="h-2 w-2 rounded-full bg-[#dfc18a] animate-ping" />
+            <span className="text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#dfc18a]">
+              OUR PORTFOLIO
+            </span>
+          </div>
+
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+            DISTINCT ROOMS. ONE GROWING PORTFOLIO.
+          </h1>
+
+          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#b0a89d] leading-relaxed">
+            Each brand below keeps its own identity, its own city, its own crowd. Select one to preview its story and explore its culinary and acoustic profile.
+          </p>
+        </div>
       </section>
 
-      <section className="border-t border-line bg-bg-sunken py-20 md:py-28">
-        <Container>
-          <p className="eyebrow mb-10">Coming Soon</p>
-          <RevealGroup className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
-            {upcoming.map((brand) => (
-              <BrandTile key={brand.slug} brand={brand} />
-            ))}
-          </RevealGroup>
-        </Container>
+      {/* Live Brands Showcase Section */}
+      <section className="py-24 md:py-32 border-b border-[#1c1916]">
+        <div className="mx-auto max-w-[1560px] px-6 md:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+              LIVE DESTINATIONS
+            </span>
+            <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
+              ACTIVE ADDRESSES
+            </h2>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {live.map((brand, idx) => {
+              const imageSrc = brand.imageSrc || (idx % 2 === 0 ? "/images/hero_bg.png" : "/images/fine_dining.png");
+              return (
+                <Link
+                  key={brand.slug}
+                  href={`/brands/${brand.slug}`}
+                  className="group relative block aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#26221c] bg-[#11100f] transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.85)] hover:-translate-y-1"
+                >
+                  <Image
+                    src={imageSrc}
+                    alt={brand.name}
+                    fill
+                    className="object-cover object-center brightness-[0.82] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-95" />
+
+                  <div className="absolute top-6 left-6">
+                    <span className="rounded-full border border-white/20 bg-black/60 px-4 py-1 text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#f7f3eb] backdrop-blur-md">
+                      {brand.city}
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                    <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
+                      {brand.name}
+                    </h3>
+                    <p className="mt-2 text-xs text-[#b0a89d] line-clamp-2 leading-relaxed font-light">
+                      {brand.description}
+                    </p>
+                    <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all group-hover:text-white">
+                      <span>Explore Address →</span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+        </div>
       </section>
-    </>
+
+      {/* Upcoming Brands Section */}
+      {upcoming.length > 0 && (
+        <section className="bg-[#070707] py-24 md:py-32 border-b border-[#1c1916]">
+          <div className="mx-auto max-w-[1560px] px-6 md:px-12">
+            
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+                EXPANSION PIPELINE
+              </span>
+              <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
+                COMING SOON
+              </h2>
+            </div>
+
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {upcoming.map((brand) => (
+                <div
+                  key={brand.slug}
+                  className="group relative aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#26221c] bg-[#11100f] transition-all duration-500 opacity-90"
+                >
+                  <Image
+                    src={brand.imageSrc || "/images/live_stage.png"}
+                    alt={brand.name}
+                    fill
+                    className="object-cover object-center brightness-[0.70]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-95" />
+
+                  <div className="absolute top-6 left-6">
+                    <span className="rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/80 px-4 py-1 text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#dfc18a] backdrop-blur-md">
+                      Upcoming
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
+                    <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#f7f3eb]">
+                      {brand.name}
+                    </h3>
+                    <p className="mt-2 text-xs text-[#b0a89d] line-clamp-2 leading-relaxed font-light">
+                      {brand.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+      )}
+
+    </div>
   );
 }
+

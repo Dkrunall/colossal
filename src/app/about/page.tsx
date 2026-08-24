@@ -1,114 +1,181 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import Container from "@/components/ui/Container";
-import Plate from "@/components/ui/Plate";
-import Reveal from "@/components/motion/Reveal";
-import RevealGroup from "@/components/motion/RevealGroup";
+import Image from "next/image";
+import Link from "next/link";
+import VisionariesSection from "@/components/home/VisionariesSection";
 import Snapshot from "@/components/home/Snapshot";
-import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "The vision, scale, and people behind Colossal Hospitality Group.",
+  title: "About Us · Colossal Hospitality Group",
+  description: "The vision, scale, and people behind Colossal Hospitality Group across Mumbai & Pune.",
 };
 
 const pillars = [
-  { title: "Premium", body: "Every room is built to a standard, not a budget.", code: "01" },
-  { title: "Experiential", body: "We design for how a night unfolds, not just how a room looks.", code: "02" },
-  { title: "Contemporary", body: "Current without chasing trends — spaces built to age well.", code: "03" },
-  { title: "Visionary", body: "Each brand is a bet on a concept we believe deserves to exist.", code: "04" },
-  { title: "Lifestyle-Led", body: "Guests, not covers. We design around how people actually live.", code: "05" },
+  { title: "PREMIUM", body: "Every room is built to a standard, not a budget.", code: "01" },
+  { title: "EXPERIENTIAL", body: "We design for how a night unfolds, not just how a room looks.", code: "02" },
+  { title: "CONTEMPORARY", body: "Current without chasing trends — spaces built to age well.", code: "03" },
+  { title: "VISIONARY", body: "Each brand is a bet on a concept we believe deserves to exist.", code: "04" },
+  { title: "LIFESTYLE-LED", body: "Guests, not covers. We design around how people actually live.", code: "05" },
 ];
 
 export default function AboutPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="About Colossal"
-        title="A hospitality group, built like a portfolio."
-        lede="Colossal Hospitality establishes and grows a portfolio of hospitality and entertainment brands — each distinct, each held to the same standard of design and experience."
-      />
+    <div className="bg-[#050505] text-[#f7f3eb]">
+      
+      {/* About Page Hero Section */}
+      <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#050505] flex items-center justify-center border-b border-[#1c1916]">
+        <Image
+          src="/images/hero_bg.png"
+          alt="Colossal Hospitality Group"
+          fill
+          priority
+          className="object-cover object-center brightness-[0.70] scale-105"
+          sizes="100vw"
+        />
+        
+        {/* Luxury Vignette Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#dfc18a]/10 blur-[150px] pointer-events-none" />
 
-      <section className="py-24 md:py-32">
-        <Container className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <Reveal className="lg:col-span-5">
-            <Plate tone="walnut" ratio="aspect-[4/5]" caption="Brand shoot pending" className="shadow-xl" />
-          </Reveal>
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3.5 py-1 mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              <span className="eyebrow text-gold">Our Group Position</span>
-            </div>
-            <h2 className="font-display max-w-lg text-3xl italic leading-[1.12] text-ink md:text-5xl">
-              Corporate credibility. Lifestyle instincts.
-            </h2>
-            <Reveal delay={0.15} className="mt-7 max-w-[54ch] space-y-5 text-ink-muted text-base leading-relaxed">
-              <p>
-                The parent brand balances the trust and professionalism guests, partners, and
-                investors expect from a hospitality group with the design sensibility and
-                cultural fluency of a lifestyle brand.
-              </p>
-              <p>
-                We lead with the group — its vision, its scale, its standards — while giving
-                every individual brand room to keep its own identity. Colossal is the frame;
-                each brand is its own picture.
-              </p>
-            </Reveal>
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/80 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
+            <span className="h-2 w-2 rounded-full bg-[#dfc18a] animate-ping" />
+            <span className="text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#dfc18a]">
+              ABOUT COLOSSAL
+            </span>
           </div>
-        </Container>
+
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+            A HOSPITALITY GROUP, BUILT LIKE A PORTFOLIO.
+          </h1>
+
+          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#b0a89d] leading-relaxed">
+            Colossal Hospitality establishes and grows a portfolio of hospitality and entertainment brands — each distinct, each held to the same standard of design and experience.
+          </p>
+        </div>
       </section>
 
-      {/* Pillars Section */}
-      <section className="border-t border-line bg-bg-sunken py-24 md:py-32">
-        <Container>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-            <div>
-              <p className="eyebrow text-gold mb-2">Our Core Blueprint</p>
-              <h2 className="font-display text-3xl italic text-ink md:text-4xl">What We Stand For</h2>
+      {/* Group Position & Narrative Section */}
+      <section className="py-24 md:py-32 border-b border-[#1c1916]">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 grid gap-14 lg:grid-cols-12 lg:items-center">
+          
+          {/* Left Widescreen Image Plate */}
+          <div className="lg:col-span-5 relative aspect-[4/5] rounded-[2.2rem] overflow-hidden border border-[#26221c] bg-[#11100f] shadow-2xl group">
+            <Image
+              src="/images/fine_dining.png"
+              alt="Group Dining Room"
+              fill
+              className="object-cover object-center brightness-90 transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 text-xs text-[#dfc18a] font-luxury tracking-widest uppercase">
+              EPITOME FINE DINING · MUMBAI
             </div>
-            <p className="mt-3 max-w-[40ch] text-sm text-ink-muted md:mt-0">
+          </div>
+
+          {/* Right Editorial Narrative */}
+          <div className="lg:col-span-7">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+              OUR GROUP POSITION
+            </span>
+
+            <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient mt-3">
+              CORPORATE CREDIBILITY. LIFESTYLE INSTINCTS.
+            </h2>
+
+            <div className="mt-8 space-y-5 text-sm sm:text-base font-light text-[#b0a89d] leading-relaxed">
+              <p>
+                The parent brand balances the trust and professionalism guests, partners, and investors expect from a hospitality group with the design sensibility and cultural fluency of a <span className="text-[#dfc18a]">lifestyle brand</span>.
+              </p>
+              <p>
+                We lead with the group — its vision, its scale, its standards — while giving every individual brand room to keep its own identity. <span className="text-[#f7f3eb] font-normal">Colossal is the frame; each brand is its own picture.</span>
+              </p>
+            </div>
+
+            <div className="mt-10 flex items-center gap-6">
+              <Link
+                href="/brands"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-lg transition-all duration-300 hover:bg-[#f2dbab] hover:scale-[1.02]"
+              >
+                <span>Explore Brands</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5 Pillars Blueprint Section */}
+      <section className="bg-[#070707] py-24 md:py-32 border-b border-[#1c1916]">
+        <div className="mx-auto max-w-[1560px] px-6 md:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+              OUR CORE BLUEPRINT
+            </span>
+            <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
+              WHAT WE STAND FOR
+            </h2>
+            <p className="mt-4 text-xs sm:text-sm text-[#b0a89d] font-light max-w-xl mx-auto">
               Five non-negotiable principles that guide every space, menu, and experience we create.
             </p>
           </div>
 
-          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5" stagger={0.08}>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {pillars.map((p) => (
               <div
                 key={p.title}
-                className="group relative flex flex-col justify-between rounded-3xl border border-line bg-bg-raised p-6 transition-all duration-500 hover:border-gold-soft hover:shadow-lg hover:-translate-y-1"
+                className="group relative flex flex-col justify-between rounded-[2rem] border border-[#26221c] bg-[#11100f] p-6 sm:p-8 transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.85)] hover:-translate-y-1"
               >
                 <div>
-                  <span className="font-display text-xs font-semibold text-gold">Pillar {p.code}</span>
-                  <h3 className="font-display mt-3 text-2xl italic text-ink transition-colors group-hover:text-gold">
+                  <span className="text-xs font-bold tracking-widest text-[#dfc18a]">
+                    PILLAR {p.code}
+                  </span>
+                  <h3 className="font-luxury mt-4 text-2xl font-normal tracking-[0.04em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-xs leading-relaxed text-ink-muted">{p.body}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-[#b0a89d] font-light">
+                    {p.body}
+                  </p>
                 </div>
-                <div className="mt-6 h-0.5 w-8 bg-line transition-all duration-500 group-hover:w-full group-hover:bg-gold" />
+                <div className="mt-8 h-0.5 w-10 bg-[#26221c] transition-all duration-500 group-hover:w-full group-hover:bg-[#dfc18a]" />
               </div>
             ))}
-          </RevealGroup>
-        </Container>
+          </div>
+
+        </div>
       </section>
 
+      {/* Leadership & Visionaries Grid */}
+      <VisionariesSection />
+
+      {/* Group Snapshot Numbers */}
       <Snapshot />
 
-      <section className="py-24 text-center md:py-32">
-        <Container>
-          <h2 className="font-display mx-auto max-w-2xl text-3xl italic leading-tight text-ink md:text-5xl">
-            Come build the next room with us.
+      {/* Careers Call to Action */}
+      <section className="py-24 text-center md:py-32 bg-[#050505]">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] leading-tight text-gold-gradient drop-shadow-[0_2px_15px_rgba(223,193,138,0.2)]">
+            COME BUILD THE NEXT ROOM WITH US
           </h2>
-          <p className="mt-4 max-w-[42ch] mx-auto text-sm text-ink-muted">
+          <p className="mt-4 max-w-xl mx-auto text-xs sm:text-sm text-[#b0a89d] font-light">
             We are actively expanding across culinary, operations, management, and corporate roles.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="/careers" variant="gold">
-              View Group Openings →
-            </Button>
+            <Link
+              href="/careers"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-2xl transition-all duration-300 hover:bg-[#f2dbab] hover:scale-[1.02]"
+            >
+              <span>View Openings</span>
+              <span>→</span>
+            </Link>
           </div>
-        </Container>
+        </div>
       </section>
-    </>
+
+    </div>
   );
 }
+
 

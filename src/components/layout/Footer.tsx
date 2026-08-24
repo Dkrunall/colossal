@@ -12,10 +12,10 @@ export default function Footer() {
     <footer className="relative z-10 px-4 pb-8 md:px-8 pt-12">
       {/* Floating Glass Dock Footer Card */}
       <div className="mx-auto max-w-[1560px] overflow-hidden rounded-[2.5rem] border border-line bg-bg-raised/90 p-8 md:p-14 backdrop-blur-2xl shadow-2xl transition-all duration-500 hover:border-gold-soft">
-        
+
         {/* Main Grid Content */}
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-6">
-          
+
           {/* Brand Info & Socials */}
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="group flex items-center gap-2 font-display text-2xl tracking-[0.06em] text-ink">
@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="font-semibold">COLOSSAL</span>
               <span className="italic font-normal text-gold">Hospitality</span>
             </Link>
-            
+
             <p className="mt-4 max-w-[32ch] text-sm leading-relaxed text-ink-muted">
               A portfolio of distinct, design-led destinations across dining, cocktail lounges, and live music stages in Mumbai &amp; Pune.
             </p>
@@ -80,7 +80,7 @@ export default function Footer() {
         {/* Bottom Legal & Back-To-Top Bar */}
         <div className="mt-14 flex flex-col gap-6 border-t border-line/60 pt-8 text-xs text-ink-faint md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Colossal Hospitality Group. All rights reserved.</p>
-          
+
           <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy" className="transition-colors hover:text-gold">
               Privacy Policy

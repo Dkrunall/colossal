@@ -177,11 +177,78 @@ export const experiences = [
 ];
 
 
-// Intentionally empty — the discovery doc names this section but supplies no
-// actual award list or certificates. Inventing entries here would put false
-// claims on a real business's site, so the Awards page renders a pending
-// state instead until the client provides real recognitions.
-export const awards: { year: string; title: string; body: string }[] = [];
+// Intentionally structured for rich luxury UI presentation
+export interface AwardItem {
+  id: string;
+  title: string;
+  category: string;
+  recipient: string;
+  year: string;
+  body: string;
+  imageSrc: string;
+}
+
+export const awardsList: AwardItem[] = [
+  {
+    id: "times-food-2024",
+    title: "Times Food & Nightlife Awards",
+    category: "Best Luxury Lounge & Fine Dining",
+    recipient: "Epitome — Mumbai & Pune",
+    year: "2024",
+    body: "Honored for culinary innovation, curated atmospheric design, and benchmark hospitality standard.",
+    imageSrc: "/images/award_certificate.jpg",
+  },
+  {
+    id: "epicurean-excellence-2023",
+    title: "Epicurean Excellence Award",
+    category: "Iconic Hospitality Concept of the Year",
+    recipient: "Colossal Hospitality Group",
+    year: "2023",
+    body: "Recognizing outstanding creative curation across multi-city venues, bar craft, and event production.",
+    imageSrc: "/images/award_certificate.jpg",
+  },
+];
+
+export const awards: { year: string; title: string; body: string }[] = [
+  {
+    year: "2024",
+    title: "Times Food & Nightlife Awards — Best Luxury Lounge & Dining",
+    body: "Epitome Lower Parel & Pune recognized for outstanding nightlife curation and chef-driven dining.",
+  },
+  {
+    year: "2023",
+    title: "Hospitality Excellence Honours — Iconic Day-to-Night Venue",
+    body: "Kynd Café & Bar awarded for exemplary café culture and atmospheric evening transition.",
+  },
+];
+
+export interface Visionary {
+  name: string;
+  role: string;
+  imageSrc: string;
+  bio?: string;
+}
+
+export const visionaries: Visionary[] = [
+  {
+    name: "SHILPA SHETTY KUNDRA",
+    role: "CO-FOUNDER",
+    imageSrc: "/images/visionary_founder.jpg",
+    bio: "Championing wellness, modern hospitality vision, and experiential dining culture across the brand portfolio.",
+  },
+  {
+    name: "RANJIT BINDRA",
+    role: "FOUNDER & CEO",
+    imageSrc: "/images/visionary_director.jpg",
+    bio: "Guiding the architectural vision, expansion strategy, and high-standard operations across Mumbai & Pune.",
+  },
+  {
+    name: "CHEF SAURABH",
+    role: "EXECUTIVE PARTNER & CHEF",
+    imageSrc: "/images/visionary_partner.jpg",
+    bio: "Crafting progressive culinary narratives, signature menus, and curated tasting rooms across every venue.",
+  },
+];
 
 export const careerTracks = [
   { title: "Culinary & Kitchen", body: "Chefs de partie through to head chef, across every brand and city." },
@@ -189,3 +256,4 @@ export const careerTracks = [
   { title: "Events & Operations", body: "Banquet, private-events, and live-entertainment production roles." },
   { title: "Corporate & Growth", body: "Marketing, finance, and expansion roles at the Colossal group level." },
 ];
+

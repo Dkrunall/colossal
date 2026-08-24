@@ -17,9 +17,10 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     if (reduceMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t: number) => 1 - Math.pow(1 - t, 3),
+      duration: 1.4,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      touchMultiplier: 2,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -35,6 +36,7 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
       lenis.destroy();
     };
   }, []);
+
 
   return <>{children}</>;
 }

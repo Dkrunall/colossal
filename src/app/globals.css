@@ -1,79 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@400;600;700&family=Italiana&display=swap');
 @import "tailwindcss";
 
-/*
-  Palette — reconciled per the discovery audit (the two client reference
-  images disagreed on Rich Black and carried mismatched neutral sets; this
-  is the single canonical system built from them, contrast-checked for
-  body text and UI states rather than inherited as-is).
-*/
 :root {
-  --bg: #faf5ef;
-  --bg-raised: #ffffff;
-  --bg-sunken: #f2ece4;
-  --ink: #241814;
-  --ink-muted: #6b5a4a;
-  --ink-faint: #a18f7a;
-  --line: #e7dccb;
-  --line-strong: #d8c8b3;
-  --gold: #8c5a2b;
-  --gold-soft: #b88352;
-  --champagne: #ad7f45;
-  --overlay: rgba(21, 14, 10, 0.55);
+  --bg: #070707;
+  --bg-raised: #121110;
+  --bg-card: #151413;
+  --bg-sunken: #0c0b0a;
+  --ink: #f7f3eb;
+  --ink-muted: #b0a89d;
+  --ink-faint: #736b60;
+  --line: #24211d;
+  --line-strong: #38332c;
+  --gold: #dfc18a;
+  --gold-soft: #c5a670;
+  --gold-bright: #f2dbab;
+  --champagne: #ecd3a7;
+  --overlay: rgba(5, 4, 3, 0.7);
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-body: "Manrope", -apple-system, "Segoe UI", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #150e0a;
-    --bg-raised: #1e1510;
-    --bg-sunken: #1a120d;
-    --ink: #f2ece4;
-    --ink-muted: #a29789;
-    --ink-faint: #776557;
-    --line: #2e221b;
-    --line-strong: #3a261d;
-    --gold: #d7b07a;
-    --gold-soft: #b88352;
-    --champagne: #e8c68f;
-    --overlay: rgba(21, 14, 10, 0.65);
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #150e0a;
-  --bg-raised: #1e1510;
-  --bg-sunken: #1a120d;
-  --ink: #f2ece4;
-  --ink-muted: #a29789;
-  --ink-faint: #776557;
-  --line: #2e221b;
-  --line-strong: #3a261d;
-  --gold: #d7b07a;
-  --gold-soft: #b88352;
-  --champagne: #e8c68f;
-  --overlay: rgba(21, 14, 10, 0.65);
-}
-
-:root[data-theme="light"] {
-  --bg: #faf5ef;
-  --bg-raised: #ffffff;
-  --bg-sunken: #f2ece4;
-  --ink: #241814;
-  --ink-muted: #6b5a4a;
-  --ink-faint: #a18f7a;
-  --line: #e7dccb;
-  --line-strong: #d8c8b3;
-  --gold: #8c5a2b;
-  --gold-soft: #b88352;
-  --champagne: #ad7f45;
-  --overlay: rgba(21, 14, 10, 0.55);
+  --font-headline: var(--font-cinzel), "Cinzel", Georgia, serif;
+  --font-serif-luxury: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-display), "Fraunces", Georgia, serif;
+  --font-body: var(--font-body), "Manrope", sans-serif;
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-raised: var(--bg-raised);
+  --color-bg-card: var(--bg-card);
   --color-bg-sunken: var(--bg-sunken);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
@@ -82,8 +35,11 @@
   --color-line-strong: var(--line-strong);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-bright: var(--gold-bright);
   --color-champagne: var(--champagne);
 
+  --font-headline: var(--font-headline);
+  --font-serif-luxury: var(--font-serif-luxury);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
@@ -94,26 +50,63 @@
 
 html {
   background: var(--bg);
+  color-scheme: dark;
+}
+
+/* Lenis Smooth Scroll Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-feature-settings: "ss01" 1;
+  letter-spacing: -0.01em;
 }
 
-::selection {
-  background: var(--gold);
-  color: var(--bg);
+
+/* Primary Luxury Roman Serif Display Font — matching reference image */
+.font-luxury {
+  font-family: var(--font-cinzel), "Cinzel", Georgia, serif !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+}
+
+
+
+.text-gold-gradient {
+  background: linear-gradient(180deg, #fff3d6 0%, #dfc18a 50%, #ad8545 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.text-gold-subtle {
+  color: #dfc18a;
 }
 
 .eyebrow {
   font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 600;
+  font-family: var(--font-body);
 }
 
 .hairline {
@@ -121,28 +114,24 @@ body {
   background: var(--line);
 }
 
-/* Modern UX & Visual Elevation Utilities */
+/* Glass and elevation effects */
 .glass-panel {
-  background: var(--bg-raised);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line);
+  background: rgba(18, 17, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(223, 193, 138, 0.15);
 }
 
-.glass-card {
-  background: var(--bg-raised);
-  border: 1px solid var(--line);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+.luxury-card {
+  background: #11100f;
+  border: 1px solid #26221c;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card:hover {
-  border-color: var(--gold-soft);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px -10px rgba(36, 24, 20, 0.08);
-}
-
-.luxury-glow {
-  box-shadow: 0 0 25px -5px rgba(140, 90, 43, 0.15);
+.luxury-card:hover {
+  border-color: rgba(223, 193, 138, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(223, 193, 138, 0.15);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -172,4 +161,5 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
 

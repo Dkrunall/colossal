@@ -1,50 +1,120 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import Container from "@/components/ui/Container";
-import NoteBand from "@/components/ui/NoteBand";
-import RevealGroup from "@/components/motion/RevealGroup";
-import Button from "@/components/ui/Button";
+import Image from "next/image";
+import Link from "next/link";
 import { careerTracks } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Careers",
-  description: "Build the next room with Colossal Hospitality.",
+  title: "Group Careers · Colossal Hospitality Group",
+  description: "Build the next room with Colossal Hospitality across culinary, operations, management, and corporate roles.",
 };
 
 export default function CareersPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Careers"
-        title="Come build the next room with us."
-        lede="Colossal is growing — across kitchens, floors, events, and the group itself. Here's where people typically join."
-      />
+    <div className="bg-[#050505] text-[#f7f3eb]">
+      
+      {/* Careers Hero Section */}
+      <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#050505] flex items-center justify-center border-b border-[#1c1916]">
+        <Image
+          src="/images/live_stage.png"
+          alt="Colossal Careers"
+          fill
+          priority
+          className="object-cover object-center brightness-[0.70] scale-105"
+          sizes="100vw"
+        />
+        
+        {/* Luxury Vignette Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#dfc18a]/10 blur-[150px] pointer-events-none" />
 
-      <NoteBand>
-        No live openings are listed yet — this page is scaffolded to connect to a roles feed
-        or ATS. Reach out directly in the meantime.
-      </NoteBand>
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/80 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
+            <span className="h-2 w-2 rounded-full bg-[#dfc18a] animate-ping" />
+            <span className="text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#dfc18a]">
+              JOIN THE TEAM
+            </span>
+          </div>
 
-      <section className="py-20 md:py-28">
-        <Container>
-          <RevealGroup className="grid gap-x-8 gap-y-14 sm:grid-cols-2" stagger={0.1}>
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+            COME BUILD THE NEXT ROOM WITH US.
+          </h1>
+
+          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#b0a89d] leading-relaxed">
+            Colossal is expanding — across kitchens, floor service, mixology, banquets, and corporate leadership across Mumbai &amp; Pune.
+          </p>
+        </div>
+      </section>
+
+      {/* Career Tracks Grid */}
+      <section className="py-24 md:py-32 border-b border-[#1c1916]">
+        <div className="mx-auto max-w-[1560px] px-6 md:px-12">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+              DEPARTMENTS &amp; ROLES
+            </span>
+            <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
+              WHERE PEOPLE JOIN
+            </h2>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {careerTracks.map((track) => (
-              <div key={track.title} className="border-t border-line-strong pt-5">
-                <p className="font-display text-xl italic text-ink">{track.title}</p>
-                <p className="mt-2 max-w-[42ch] text-ink-muted">{track.body}</p>
+              <div
+                key={track.title}
+                className="group flex flex-col justify-between rounded-[2.2rem] border border-[#26221c] bg-[#11100f] p-8 transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.85)]"
+              >
+                <div>
+                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#dfc18a]">
+                    CAREER TRACK
+                  </span>
+                  <h3 className="font-luxury text-2xl font-normal text-[#f7f3eb] mt-3 transition-colors group-hover:text-[#dfc18a]">
+                    {track.title}
+                  </h3>
+                  <p className="mt-3 text-xs sm:text-sm text-[#b0a89d] leading-relaxed font-light">
+                    {track.body}
+                  </p>
+                </div>
+
+                <div className="mt-8 border-t border-[#26221c] pt-5">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all duration-300 hover:text-white hover:translate-x-1"
+                  >
+                    <span>Apply for Track →</span>
+                  </Link>
+                </div>
               </div>
             ))}
-          </RevealGroup>
-
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-line pt-10">
-            <p className="max-w-[42ch] text-ink-muted">
-              Don&apos;t see your track listed? Send your details anyway — we&apos;re hiring
-              across every brand as we grow.
-            </p>
-            <Button href="/contact">Get In Touch</Button>
           </div>
-        </Container>
+
+          {/* Bottom Direct Resume Box */}
+          <div className="mt-20 rounded-[2.5rem] border border-[#26221c] bg-[#11100f] p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+            <div>
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
+                GENERAL APPLICATIONS
+              </span>
+              <h3 className="font-luxury text-2xl sm:text-4xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
+                DON'T SEE YOUR TRACK LISTED?
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm text-[#b0a89d] font-light max-w-xl">
+                Send your portfolio or CV directly to our talent team — we are hiring continuously across all brands as we launch new addresses.
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-lg transition-all duration-300 hover:bg-[#f2dbab] hover:scale-[1.02] flex-shrink-0"
+            >
+              <span>Submit Portfolio</span>
+              <span>→</span>
+            </Link>
+          </div>
+
+        </div>
       </section>
-    </>
+
+    </div>
   );
 }
+
