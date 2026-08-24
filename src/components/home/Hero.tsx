@@ -75,18 +75,18 @@ export default function Hero() {
       <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/40 via-transparent to-[#050505]/90 pointer-events-none" />
 
       {/* Bottom Carousel Navigation Bar `<  01/04  >` */}
-      <div className="absolute bottom-8 sm:bottom-12 inset-x-0 z-30 flex flex-col items-center justify-center gap-3">
-        <div className="flex items-center gap-5 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/85 px-6 py-2 backdrop-blur-xl shadow-2xl">
+      <div className="absolute bottom-20 sm:bottom-24 md:bottom-16 inset-x-0 z-30 flex flex-col items-center justify-center gap-2.5 sm:gap-3 px-4">
+        <div className="flex items-center gap-3 sm:gap-5 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/85 px-4 sm:px-6 py-1.5 sm:py-2 backdrop-blur-xl shadow-2xl">
           <button
             type="button"
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-sm cursor-pointer"
+            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-xs sm:text-sm cursor-pointer"
           >
             ❮
           </button>
 
-          <div className="flex items-center gap-2 font-luxury text-sm md:text-base tracking-[0.2em] text-[#f7f3eb]">
+          <div className="flex items-center gap-1.5 sm:gap-2 font-luxury text-xs sm:text-sm md:text-base tracking-[0.16em] sm:tracking-[0.2em] text-[#f7f3eb]">
             <span className="text-[#dfc18a] font-bold">0{current + 1}</span>
             <span className="text-[#736b60]">/</span>
             <span>0{HERO_SLIDES.length}</span>
@@ -96,17 +96,18 @@ export default function Hero() {
             type="button"
             onClick={nextSlide}
             aria-label="Next Slide"
-            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-sm cursor-pointer"
+            className="text-[#dfc18a] transition-all hover:scale-125 hover:text-white p-1 text-xs sm:text-sm cursor-pointer"
           >
             ❯
           </button>
         </div>
 
         {/* Current Venue Badge */}
-        <p className="text-[0.68rem] sm:text-xs font-semibold uppercase tracking-[0.24em] text-[#dfc18a]/90 drop-shadow-md">
+        <p className="text-[0.62rem] sm:text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#dfc18a]/90 drop-shadow-md text-center max-w-xs sm:max-w-md truncate">
           {slide.name} · {slide.tagline.split("·")[1] || "Colossal Hospitality"}
         </p>
       </div>
+
     </section>
   );
 }

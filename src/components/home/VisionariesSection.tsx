@@ -38,16 +38,16 @@ export default function VisionariesSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-95" />
 
               {/* Bottom Information */}
-              <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
-                <h3 className="font-luxury text-2xl sm:text-3xl font-semibold tracking-[0.06em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8 flex flex-col justify-end">
+                <h3 className="font-luxury text-xl sm:text-2xl md:text-3xl font-semibold tracking-[0.06em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
                   {person.name}
                 </h3>
 
-                <p className="mt-1 text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
+                <p className="mt-1 text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.2em] text-[#dfc18a]">
                   {person.role}
                 </p>
                 {person.bio && (
-                  <p className="mt-3 text-xs text-[#b0a89d] line-clamp-2 leading-relaxed opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-light">
+                  <p className="mt-2 sm:mt-3 text-[0.75rem] sm:text-xs text-[#b0a89d] line-clamp-2 leading-relaxed opacity-90 sm:opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-light">
                     {person.bio}
                   </p>
                 )}
@@ -55,6 +55,7 @@ export default function VisionariesSection() {
             </div>
           ))}
         </div>
+
 
       </div>
     </section>

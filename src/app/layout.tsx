@@ -22,7 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScrollProvider>
           <GsapScrollAnimations />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-28 sm:pb-32">{children}</main>
+
           <Footer />
         </SmoothScrollProvider>
       </body>
