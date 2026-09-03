@@ -223,12 +223,14 @@ export const visionaries: Visionary[] = [
   {
     name: "JIGAR SANGHVI",
     role: "DIRECTOR",
-    imageSrc: "/images/visionary_founder.jpg",
+    imageSrc: "/images/jigar_sanghvi.jpg",
+    bio: "Guiding the strategic development, high-energy dining concepts, and hospitality scale across the group.",
   },
   {
     name: "KRIPESH SANGHVI",
     role: "DIRECTOR",
-    imageSrc: "/images/visionary_director.jpg",
+    imageSrc: "/images/kripesh_sanghvi.jpg",
+    bio: "Pioneering atmospheric lounge culture, nightlife curation, and guest experience benchmarks for Colossal.",
   },
 ];
 
