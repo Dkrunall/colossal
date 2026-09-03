@@ -6,7 +6,7 @@ import Snapshot from "@/components/home/Snapshot";
 
 export const metadata: Metadata = {
   title: "About Us · Colossal Hospitality Group",
-  description: "The vision, scale, and people behind Colossal Hospitality Group across Mumbai, Pune & Dubai.",
+  description: "The vision, scale, and people behind Colossal Hospitality Group across Mumbai & Pune.",
 };
 
 const pillars = [

@@ -23,9 +23,9 @@ const HERO_SLIDES = [
     image: "/images/kynd_cafe.png",
   },
   {
-    id: "epitome-dubai",
-    name: "Epitome Dubai",
-    tagline: "Fine Dining & Bar · Dubai Creek",
+    id: "epitome-pune",
+    name: "Epitome Pune",
+    tagline: "Fine Dining & Bar · Pune",
     image: "/images/live_stage.png",
   },
 ];

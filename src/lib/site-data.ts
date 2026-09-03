@@ -33,27 +33,27 @@ export const brands: Brand[] = [
     imageSrc: "/images/fine_dining.png",
   },
   {
-    slug: "epitome-juhu",
-    name: "Epitome",
+    slug: "khufe",
+    name: "Khufè",
     city: "Mumbai",
-    kind: "Fine Dining & Bar",
-    tagline: "The Epitome language, on Juhu's doorstep.",
+    kind: "Lifestyle Concept",
+    tagline: "Announced. Details to follow.",
     description:
-      "The second Mumbai address for Epitome — the same all-day, pure-vegetarian dining-and-bar concept, a short walk from the Juhu coast.",
+      "A concept joining the Colossal portfolio — full brand story, address, and imagery to be published ahead of launch.",
     status: "live",
-    externalUrl: "https://epitomeglobaldining.com/",
+    externalUrl: null,
     reservation: null,
     tone: "walnut",
     imageSrc: "/images/hero_bg.png",
   },
   {
-    slug: "epitome-dubai",
+    slug: "epitome-pune",
     name: "Epitome",
-    city: "Dubai",
+    city: "Pune",
     kind: "Fine Dining & Bar",
-    tagline: "Epitome, abroad — inside Aloft Dubai Creek.",
+    tagline: "The Epitome language, reset for Pune.",
     description:
-      "Epitome's first international address, inside the Aloft Dubai Creek Hotel on Baniyas Road — the same globally-inspired, all-day vegetarian menu, built for a Dubai crowd.",
+      "The Epitome address in Pune — the same all-day, pure-vegetarian dining-and-bar concept, adapted to a new skyline and a new crowd.",
     status: "live",
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
@@ -86,19 +86,6 @@ export const brands: Brand[] = [
     externalUrl: null,
     reservation: null,
     tone: "espresso",
-  },
-  {
-    slug: "colossal-stay",
-    name: "Colossal Stay",
-    city: "Upcoming",
-    kind: "New Concept",
-    tagline: "Announced. Details to follow.",
-    description:
-      "A new hospitality-and-stay concept named alongside Colossal's dining brands — story and imagery to be published ahead of launch.",
-    status: "upcoming",
-    externalUrl: null,
-    reservation: null,
-    tone: "walnut",
   },
 ];
 
@@ -141,8 +128,8 @@ export const socialLinks = [
 ];
 
 export const snapshotStats = [
-  { value: 6, suffix: "", label: "Brands across the portfolio" },
-  { value: 3, suffix: "", label: "Cities, and growing" },
+  { value: 5, suffix: "", label: "Brands across the portfolio" },
+  { value: 2, suffix: "", label: "Cities, and growing" },
 ];
 
 export const pendingStats = ["Guests hosted annually", "Signature experiences"];
@@ -193,7 +180,7 @@ export const awardsList: AwardItem[] = [
     id: "times-food-2024",
     title: "Times Food & Nightlife Awards",
     category: "Best Luxury Lounge & Fine Dining",
-    recipient: "Epitome — Mumbai & Dubai",
+    recipient: "Epitome — Mumbai & Pune",
     year: "2024",
     body: "Honored for culinary innovation, curated atmospheric design, and benchmark hospitality standard.",
     imageSrc: "/images/award_certificate.jpg",
@@ -213,7 +200,7 @@ export const awards: { year: string; title: string; body: string }[] = [
   {
     year: "2024",
     title: "Times Food & Nightlife Awards — Best Luxury Lounge & Dining",
-    body: "Epitome Lower Parel & Juhu recognized for outstanding nightlife curation and chef-driven dining.",
+    body: "Epitome Mumbai & Pune recognized for outstanding nightlife curation and chef-driven dining.",
   },
   {
     year: "2023",
@@ -229,20 +216,19 @@ export interface Visionary {
   bio?: string;
 }
 
-// Names verified against MCA/ROC filings for Colossal Hospitality and
-// Entertainment Private Limited (CIN U55100MH2019PTC330389) — the only
-// public source with a documented tie to the company. No public source
-// gives either a title beyond "Director", so that is what is shown.
+// Names provided directly by the client. No verified bio or portrait
+// on file yet, so generic placeholder imagery is used until real photos
+// are supplied.
 export const visionaries: Visionary[] = [
   {
-    name: "RIKKU RAMESH KUMAR RAMANI",
+    name: "JIGAR SANGHVI",
     role: "DIRECTOR",
-    imageSrc: "/images/rikku_ramani.jpg",
+    imageSrc: "/images/visionary_founder.jpg",
   },
   {
-    name: "SHREY VISHAL KARIA",
+    name: "KRIPESH SANGHVI",
     role: "DIRECTOR",
-    imageSrc: "/images/shrey_karia.jpg",
+    imageSrc: "/images/visionary_director.jpg",
   },
 ];
 

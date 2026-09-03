@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css";
 export interface MapOutlet {
   id: string;
   name: string;
-  city: "Mumbai" | "Pune" | "Dubai";
+  city: "Mumbai" | "Pune";
   neighborhood: string;
   concept: string;
   address: string;
@@ -236,7 +236,7 @@ export default function RealLeafletMap({
       {/* Bottom Coordinates Legend HUD */}
       <div className="absolute bottom-5 left-5 z-20 pointer-events-none hidden sm:block">
         <div className="rounded-full border border-[#6b162a] bg-[#1a040b]/90 px-3.5 py-1 text-[0.6rem] font-medium tracking-widest text-[#baa89f] backdrop-blur-md">
-          MUMBAI 18.99° N · PUNE 18.53° N · DUBAI 25.25° N
+          MUMBAI 18.99° N · PUNE 18.53° N
         </div>
       </div>
     </div>

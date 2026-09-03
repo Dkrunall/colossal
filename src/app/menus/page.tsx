@@ -6,7 +6,7 @@ import Container from "@/components/ui/Container";
 import Plate from "@/components/ui/Plate";
 import RevealGroup from "@/components/motion/RevealGroup";
 
-const VENUES = ["Epitome Mumbai", "Epitome Juhu", "Kynd Café & Bar"] as const;
+const VENUES = ["Epitome Mumbai", "Epitome Pune", "Kynd Café & Bar"] as const;
 type Venue = (typeof VENUES)[number];
 
 const MENU_CATEGORIES = ["Chef's Tasting", "A La Carte Mains", "Craft Cocktails", "Desserts"] as const;
@@ -55,7 +55,7 @@ const MENU_ITEMS: Record<Venue, MenuItem[]> = {
       price: "₹ 750",
     },
   ],
-  "Epitome Juhu": [
+  "Epitome Pune": [
     {
       name: "Wood-Fired Burrata & Figs",
       category: "Chef's Tasting",

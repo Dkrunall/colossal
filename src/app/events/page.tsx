@@ -39,7 +39,7 @@ export default function EventsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            Curated DJ sets, live acoustic sets, and guest chef pop-ups across our addresses in Mumbai, Pune &amp; Dubai.
+            Curated DJ sets, live acoustic sets, and guest chef pop-ups across our addresses in Mumbai &amp; Pune.
           </p>
         </div>
       </section>

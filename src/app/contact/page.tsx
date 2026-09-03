@@ -4,7 +4,7 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us · Colossal Hospitality Group",
-  description: "Get in touch with Colossal Hospitality Group for inquiries, partnerships, banquets, and group careers across Mumbai, Pune & Dubai.",
+  description: "Get in touch with Colossal Hospitality Group for inquiries, partnerships, banquets, and group careers across Mumbai & Pune.",
 };
 
 export default function ContactPage() {
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   COLOSSAL HOSPITALITY GROUP
                 </h3>
                 <p className="mt-1 text-xs text-[#baa89f] font-light">
-                  Mumbai, Pune &amp; Dubai Administrative Offices
+                  Mumbai &amp; Pune Administrative Offices
                 </p>
               </div>
 

@@ -40,7 +40,7 @@ export default function CareersPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            Colossal is expanding — across kitchens, floor service, mixology, banquets, and corporate leadership across Mumbai, Pune &amp; Dubai.
+            Colossal is expanding — across kitchens, floor service, mixology, banquets, and corporate leadership across Mumbai &amp; Pune.
           </p>
         </div>
       </section>

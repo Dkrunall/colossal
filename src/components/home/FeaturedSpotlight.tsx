@@ -15,7 +15,7 @@ const SPOTLIGHT_ITEMS = [
     title: "THE CURATED EXPERIENCES",
     category: "Chef's Table & Live Acoustics",
     description:
-      "An indulgent dining and sensory experience crafted across all addresses. Chef's table tasting journeys, omakase courses, and curated DJ sets across Epitome Mumbai, Juhu, and Dubai.",
+      "An indulgent dining and sensory experience crafted across all addresses. Chef's table tasting journeys, omakase courses, and curated DJ sets across Epitome Mumbai and Pune.",
     image: "/images/live_stage.png",
     link: "/experiences",
     actionText: "Explore Experiences →",

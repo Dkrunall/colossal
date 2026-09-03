@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { brands } from "@/lib/site-data";
 
-const CITIES = ["All Cities", "Mumbai", "Pune", "Dubai"] as const;
+const CITIES = ["All Cities", "Mumbai", "Pune"] as const;
 
 export default function ReservationsPage() {
   const [selectedCity, setSelectedCity] = useState<string>("All Cities");

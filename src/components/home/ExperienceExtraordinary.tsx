@@ -24,7 +24,7 @@ export default function ExperienceExtraordinary() {
 
         {/* Subtitle */}
         <p className="mt-4 text-xs sm:text-sm md:text-base font-light tracking-wide text-[#f4e0b5]/85 max-w-xl mx-auto">
-          Defining the future of hospitality, culinary artistry, and curated evening spaces across Mumbai, Pune &amp; Dubai.
+          Defining the future of hospitality, culinary artistry, and curated evening spaces across Mumbai &amp; Pune.
         </p>
 
         {/* Action Button & Editorial Link matching reference */}

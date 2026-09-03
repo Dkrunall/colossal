@@ -39,18 +39,18 @@ const OUTLETS: MapOutlet[] = [
     status: "Live",
   },
   {
-    id: "epitome-juhu",
-    name: "Epitome Juhu",
-    city: "Mumbai",
-    neighborhood: "Juhu",
+    id: "epitome-pune",
+    name: "Epitome Pune",
+    city: "Pune",
+    neighborhood: "Pune",
     concept: "Fine Dining & Bar",
-    address: "Juhu, Mumbai",
+    address: "Pune, Maharashtra",
     timings: "12:00 PM – 1:30 AM Daily",
-    imageSrc: "/images/hero_bg.png",
-    slug: "epitome-juhu",
+    imageSrc: "/images/live_stage.png",
+    slug: "epitome-pune",
     phone: "+919999999999",
-    lat: 19.1075,
-    lng: 72.8263,
+    lat: 18.5204,
+    lng: 73.8567,
     status: "Live",
   },
   {
@@ -68,24 +68,9 @@ const OUTLETS: MapOutlet[] = [
     lng: 73.894,
     status: "Live",
   },
-  {
-    id: "epitome-dubai",
-    name: "Epitome Dubai",
-    city: "Dubai",
-    neighborhood: "Deira",
-    concept: "Fine Dining & Bar",
-    address: "Aloft Dubai Creek Hotel, Baniyas Road, Deira, Dubai",
-    timings: "12:00 PM – 1:30 AM Daily",
-    imageSrc: "/images/live_stage.png",
-    slug: "epitome-dubai",
-    phone: "+919999999999",
-    lat: 25.2532,
-    lng: 55.3316,
-    status: "Live",
-  },
 ];
 
-type FilterCity = "ALL" | "Mumbai" | "Pune" | "Dubai";
+type FilterCity = "ALL" | "Mumbai" | "Pune";
 
 export default function InteractiveOutletsMap() {
   const [selectedCity, setSelectedCity] = useState<FilterCity>("ALL");
@@ -116,13 +101,13 @@ export default function InteractiveOutletsMap() {
               INTERACTIVE OUTLET RADAR
             </h2>
             <p className="mt-4 text-xs sm:text-sm md:text-base text-[#baa89f] font-light max-w-xl">
-              Explore our physical rooms across Mumbai, Pune, and Dubai on real street cartography. Select any destination pin to inspect room details, street coordinates, and direct table reservation channels.
+              Explore our physical rooms across Mumbai and Pune on real street cartography. Select any destination pin to inspect room details, street coordinates, and direct table reservation channels.
             </p>
           </div>
 
           {/* City Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-            {(["ALL", "Mumbai", "Pune", "Dubai"] as FilterCity[]).map((city) => {
+            {(["ALL", "Mumbai", "Pune"] as FilterCity[]).map((city) => {
               const isActive = selectedCity === city;
               return (
                 <button
@@ -251,7 +236,7 @@ export default function InteractiveOutletsMap() {
         </div>
 
         {/* Bottom Quick Outlet Picker Strip */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3.5 border-t border-[#63182b] pt-8">
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5 border-t border-[#63182b] pt-8">
           {OUTLETS.map((item) => {
             const isSelected = activeOutlet.id === item.id;
             return (

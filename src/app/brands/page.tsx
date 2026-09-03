@@ -5,7 +5,7 @@ import { brands } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Our Brands · Colossal Hospitality Group",
-  description: "The full Colossal Hospitality portfolio — live and upcoming addresses across Mumbai, Pune & Dubai.",
+  description: "The full Colossal Hospitality portfolio — live and upcoming addresses across Mumbai & Pune.",
 };
 
 export default function BrandsPage() {

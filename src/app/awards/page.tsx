@@ -39,7 +39,7 @@ export default function AwardsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            From Times Food &amp; Nightlife Awards to architectural dining accolades — celebrating the craftsmanship and culinary leadership across Mumbai, Pune &amp; Dubai.
+            From Times Food &amp; Nightlife Awards to architectural dining accolades — celebrating the craftsmanship and culinary leadership across Mumbai &amp; Pune.
           </p>
         </div>
       </section>

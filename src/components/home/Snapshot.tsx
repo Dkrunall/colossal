@@ -3,8 +3,8 @@ import RevealGroup from "@/components/motion/RevealGroup";
 import Counter from "@/components/motion/Counter";
 
 const GROUP_STATS = [
-  { value: 6, suffix: "", label: "Brands Across Portfolio", sub: "Fine dining, cafés & cloud kitchens" },
-  { value: 3, suffix: "", label: "Core Metro Cities", sub: "Mumbai, Pune & Dubai destinations" },
+  { value: 5, suffix: "", label: "Brands Across Portfolio", sub: "Fine dining, cafés & cloud kitchens" },
+  { value: 2, suffix: "", label: "Core Metro Cities", sub: "Mumbai & Pune destinations" },
   { value: 150, suffix: "K+", label: "Annual Guests Served", sub: "Across all active addresses" },
   { value: 4.9, suffix: " ★", label: "Hospitality Rating", sub: "Guest satisfaction score" },
 ];
