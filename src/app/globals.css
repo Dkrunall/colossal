@@ -2,20 +2,44 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #070707;
-  --bg-raised: #121110;
-  --bg-card: #151413;
-  --bg-sunken: #0c0b0a;
-  --ink: #f7f3eb;
-  --ink-muted: #b0a89d;
-  --ink-faint: #736b60;
-  --line: #24211d;
-  --line-strong: #38332c;
+  /* Luxury Editorial Palette: Velvet Maroon, Champagne Gold, Obsidian Black */
+  --gold: #dfc18a;
+  --gold-soft: #f4e0b5;
+  --gold-bright: #ffd992;
+  --gold-deep: #b38b4d;
+  
+  /* Rich, Visible Velvet Maroon & Royal Wine Tokens */
+  --maroon-velvet: #480e1d;
+  --maroon-rich: #5c1326;
+  --maroon-light: #7a1d35;
+  --maroon-border: #6d1b31;
+  --maroon-card: #280712;
+  --maroon-card-hover: #360a18;
+  --maroon-950: #120307;
+  --maroon-900: #24050e;
+  --maroon-800: #380816;
+  --maroon-700: #4e0d1f;
+  --maroon-600: #68122a;
+  --maroon-500: #881938;
+
+  /* Obsidian Black Base with Wine Undertone */
+  --bg: #0c0306;
+  --bg-raised: #20060f;
+  --bg-sunken: #140409;
+  --line: #481220;
+  --line-strong: #6d1b31;
+  --ink: #faf5ee;
+  --ink-muted: #baa89f;
+  --ink-faint: #78656b;
+  --cream: #faf5ec;
+
+
+  /* Golden & Champagne Accents */
   --gold: #dfc18a;
   --gold-soft: #c5a670;
-  --gold-bright: #f2dbab;
+  --gold-bright: #f4e0b5;
   --champagne: #ecd3a7;
-  --overlay: rgba(5, 4, 3, 0.7);
+  --overlay: rgba(8, 3, 5, 0.75);
 
   --font-headline: var(--font-cinzel), "Cinzel", Georgia, serif;
   --font-serif-luxury: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
@@ -28,11 +52,25 @@
   --color-bg-raised: var(--bg-raised);
   --color-bg-card: var(--bg-card);
   --color-bg-sunken: var(--bg-sunken);
+  
+  --color-maroon-950: var(--maroon-950);
+  --color-maroon-900: var(--maroon-900);
+  --color-maroon-800: var(--maroon-800);
+  --color-maroon-700: var(--maroon-700);
+  --color-maroon-600: var(--maroon-600);
+  --color-maroon-velvet: var(--maroon-velvet);
+  --color-maroon-card: var(--maroon-card);
+  --color-maroon-border: var(--maroon-border);
+  --color-maroon-border-bright: var(--maroon-border-bright);
+
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-ink-faint: var(--ink-faint);
+  --color-cream: var(--cream);
+
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
+  
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-gold-bright: var(--gold-bright);
@@ -51,6 +89,8 @@
 html {
   background: var(--bg);
   color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Lenis Smooth Scroll Styles */
@@ -75,10 +115,11 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   letter-spacing: -0.01em;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-
-/* Primary Luxury Roman Serif Display Font — matching reference image */
+/* Primary Luxury Roman Serif Display Font */
 .font-luxury {
   font-family: var(--font-cinzel), "Cinzel", Georgia, serif !important;
   letter-spacing: 0.02em !important;
@@ -86,15 +127,11 @@ body {
   font-weight: 400 !important;
 }
 
-
-
 .text-gold-gradient {
-  background: linear-gradient(180deg, #fff3d6 0%, #dfc18a 50%, #ad8545 100%);
+  background: linear-gradient(180deg, #fff5dc 0%, #dfc18a 48%, #b08746 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 .text-gold-subtle {
   color: #dfc18a;
@@ -114,24 +151,54 @@ body {
   background: var(--line);
 }
 
-/* Glass and elevation effects */
+/* Velvet Maroon section background - rich, visible royal wine */
+.bg-maroon-velvet {
+  background-color: #4a0e1c;
+  background-image: radial-gradient(ellipse at 50% 0%, #72182e 0%, #4a0e1c 55%, #2b0710 100%);
+}
+
+/* Editorial Underlined Link matching reference image ("НАЧАТЬ ТВОРИТЬ ИСТОРИЮ →") */
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.editorial-link:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  letter-spacing: 0.26em;
+  transform: translateX(2px);
+}
+
+/* Glass and elevation effects with rich Maroon & Gold */
 .glass-panel {
-  background: rgba(18, 17, 16, 0.85);
+  background: rgba(43, 8, 18, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(223, 193, 138, 0.15);
+  border: 1px solid rgba(223, 193, 138, 0.28);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .luxury-card {
-  background: #11100f;
-  border: 1px solid #26221c;
+  background: #250711;
+  border: 1px solid #541424;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card:hover {
-  border-color: rgba(223, 193, 138, 0.45);
+  background: #330a17;
+  border-color: rgba(223, 193, 138, 0.6);
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(223, 193, 138, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -160,6 +227,15 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
+}
+
+/* Luxury Obsidian & Wine Dark Cartography for OpenStreetMap */
+.leaflet-tile-pane .luxury-dark-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(75%) contrast(120%) saturate(20%) !important;
+}
+
+.leaflet-container {
+  background: #0d0205 !important;
 }
 
 

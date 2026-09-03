@@ -13,11 +13,11 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-bg-sunken/40 via-bg to-bg pb-20 pt-36 md:pb-24 md:pt-44">
-      {/* Background Radial Glow Accent */}
+      {/* Background Radial Glow Accent with Maroon and Gold */}
       <div
-        className="absolute top-0 right-1/4 h-80 w-80 rounded-full opacity-10 pointer-events-none"
+        className="absolute top-0 right-1/4 h-96 w-96 rounded-full opacity-20 pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(140, 90, 43, 0.4) 0%, transparent 75%)",
+          background: "radial-gradient(circle, rgba(104, 21, 42, 0.5) 0%, rgba(223, 193, 138, 0.15) 50%, transparent 75%)",
         }}
         aria-hidden
       />

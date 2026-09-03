@@ -44,20 +44,18 @@ export default function BrandsShowcase() {
   };
 
   return (
-    <section className="bg-[#050505] py-24 md:py-32 border-b border-[#1c1916] overflow-hidden">
+    <section className="bg-[#080406] py-24 md:py-32 border-b border-[#2d1118] overflow-hidden">
       <div className="mx-auto max-w-[1560px] px-6 md:px-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient drop-shadow-[0_2px_15px_rgba(223,193,138,0.2)]">
+          <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient">
             OUR BRANDS
           </h2>
-          <p className="mt-4 text-xs sm:text-sm md:text-base text-[#b0a89d] leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="mt-4 text-xs sm:text-sm md:text-base text-[#baa89f] leading-relaxed max-w-2xl mx-auto font-light">
             A portfolio of distinct living experiences, each holding its own character, designed around how people live, gather, and celebrate.
           </p>
         </div>
-
-
 
         {/* Carousel Container */}
         <div
@@ -77,43 +75,42 @@ export default function BrandsShowcase() {
               >
                 <Link
                   href={`/brands/${brand.slug}`}
-                  className="group relative block aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#26221c] bg-[#11100f] transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_36px_rgba(0,0,0,0.85)]"
+                  className="group relative block aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#6b162a] bg-gradient-to-b from-[#360917] via-[#20050e] to-[#0e0206] transition-all duration-500 hover:border-[#dfc18a]"
                 >
                   {/* Card Background Image */}
                   <Image
                     src={imageSrc}
                     alt={brand.name}
                     fill
-                    className="object-cover object-center brightness-[0.82] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                    className="object-cover object-center brightness-[0.75] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
                     sizes="(max-width: 768px) 280px, 380px"
                   />
 
-                  {/* High Legibility Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-95" />
+                  {/* High Legibility Gradient Overlay with Deep Maroon Undertone */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#140207] via-[#140207]/50 to-transparent opacity-95" />
 
                   {/* Top City / Status Badge */}
                   <div className="absolute top-5 left-5">
-                    <span className="rounded-full border border-white/20 bg-black/60 px-3.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-[#f7f3eb] backdrop-blur-md">
+                    <span className="rounded-full border border-[#dfc18a]/60 bg-[#5c1326] px-3.5 py-1 text-[0.62rem] font-bold uppercase tracking-[0.2em] text-[#f4e0b5] backdrop-blur-md">
                       {isUpcoming ? "Upcoming" : brand.city}
                     </span>
                   </div>
 
                   {/* Bottom Content Overlay */}
                   <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end">
-                    <h3 className="font-luxury text-2xl sm:text-3xl font-semibold tracking-[0.06em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a]">
+                    <h3 className="font-luxury text-2xl sm:text-3xl font-semibold tracking-[0.06em] text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">
                       {brand.name} {brand.city !== "Upcoming" && brand.city !== "Multi-city" ? `· ${brand.city}` : ""}
                     </h3>
-
                     
-                    <p className="mt-2 text-xs text-[#b0a89d] line-clamp-2 leading-relaxed font-light">
+                    <p className="mt-2 text-xs text-[#baa89f] line-clamp-2 leading-relaxed font-light">
                       {brand.description}
                     </p>
 
-                    <div className="mt-5 flex items-center justify-between border-t border-[#332e27] pt-4">
+                    <div className="mt-5 flex items-center justify-between border-t border-[#6b162a] pt-4">
                       <span className="text-[0.72rem] font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all duration-300 group-hover:translate-x-1">
                         Explore →
                       </span>
-                      <span className="text-[0.65rem] uppercase tracking-wider text-[#736b60]">
+                      <span className="text-[0.65rem] uppercase tracking-wider text-[#dfc18a]/70">
                         {brand.kind}
                       </span>
                     </div>
@@ -130,14 +127,14 @@ export default function BrandsShowcase() {
             type="button"
             onClick={prevBrand}
             aria-label="Previous Brand"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#38332c] bg-[#121110] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#781d34] bg-[#5a1224] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
           >
             ❮
           </button>
 
-          <div className="flex items-center gap-2 font-luxury text-base tracking-[0.2em] text-[#f7f3eb]">
+          <div className="flex items-center gap-2 font-luxury text-base tracking-[0.2em] text-[#faf5ee]">
             <span className="text-[#dfc18a] font-bold">0{currentIndex + 1}</span>
-            <span className="text-[#736b60]">/</span>
+            <span className="text-[#dfc18a]/60">/</span>
             <span>0{brands.length}</span>
           </div>
 
@@ -145,7 +142,7 @@ export default function BrandsShowcase() {
             type="button"
             onClick={nextBrand}
             aria-label="Next Brand"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#38332c] bg-[#121110] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#781d34] bg-[#5a1224] text-[#dfc18a] transition-all hover:border-[#dfc18a] hover:bg-[#dfc18a] hover:text-black cursor-pointer"
           >
             ❯
           </button>

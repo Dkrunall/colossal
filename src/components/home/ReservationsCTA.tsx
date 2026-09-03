@@ -43,7 +43,7 @@ export default function ReservationsCTA() {
                 Active Outlets ({liveBrands.length})
               </span>
               <span className="text-xs font-semibold uppercase tracking-[0.12em] text-gold">
-                Mumbai · Pune
+                Mumbai · Pune · Dubai
               </span>
             </div>
 

@@ -6,7 +6,7 @@ import Container from "@/components/ui/Container";
 import Plate from "@/components/ui/Plate";
 import RevealGroup from "@/components/motion/RevealGroup";
 
-const VENUES = ["Epitome Mumbai", "Epitome Pune", "Kynd Café & Bar"] as const;
+const VENUES = ["Epitome Mumbai", "Epitome Juhu", "Kynd Café & Bar"] as const;
 type Venue = (typeof VENUES)[number];
 
 const MENU_CATEGORIES = ["Chef's Tasting", "A La Carte Mains", "Craft Cocktails", "Desserts"] as const;
@@ -55,7 +55,7 @@ const MENU_ITEMS: Record<Venue, MenuItem[]> = {
       price: "₹ 750",
     },
   ],
-  "Epitome Pune": [
+  "Epitome Juhu": [
     {
       name: "Wood-Fired Burrata & Figs",
       category: "Chef's Tasting",
@@ -119,22 +119,22 @@ export default function MenusPage() {
       <section className="py-16 md:py-24">
         <Container>
           {/* Venue Selector */}
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-line pb-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-[#38141d] pb-8">
             <div>
-              <p className="eyebrow text-gold">Choose Venue</p>
-              <h2 className="font-display mt-1 text-2xl italic text-ink">{activeVenue} Menu</h2>
+              <p className="eyebrow text-[#dfc18a]">Choose Venue</p>
+              <h2 className="font-luxury mt-1 text-2xl sm:text-3xl font-normal text-[#faf5ee]">{activeVenue} Menu</h2>
             </div>
 
-            <div className="flex flex-wrap gap-2 rounded-full border border-line bg-bg-raised p-1.5 backdrop-blur-md">
+            <div className="flex flex-wrap gap-2 rounded-full border border-[#38141d] bg-[#14060a] p-1.5 backdrop-blur-md">
               {VENUES.map((v) => (
                 <button
                   key={v}
                   type="button"
                   onClick={() => setActiveVenue(v)}
-                  className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 ${
+                  className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 cursor-pointer ${
                     activeVenue === v
-                      ? "bg-gold text-white shadow-sm"
-                      : "text-ink-muted hover:bg-line/30 hover:text-ink"
+                      ? "border border-[#dfc18a] bg-[#dfc18a] text-black font-bold shadow-sm"
+                      : "text-[#baa89f] hover:bg-[#240813] hover:text-[#faf5ee]"
                   }`}
                 >
                   {v}
@@ -148,10 +148,10 @@ export default function MenusPage() {
             <button
               type="button"
               onClick={() => setActiveCategory("All")}
-              className={`rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] transition-colors ${
+              className={`rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] transition-colors cursor-pointer ${
                 activeCategory === "All"
-                  ? "bg-ink text-bg"
-                  : "border border-line bg-bg-sunken/60 text-ink-muted hover:text-ink"
+                  ? "border border-[#dfc18a] bg-[#dfc18a] text-black font-bold"
+                  : "border border-[#38141d] bg-[#120408] text-[#dfc18a]/80 hover:text-white hover:border-[#dfc18a]/50"
               }`}
             >
               All Offerings
@@ -161,10 +161,10 @@ export default function MenusPage() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] transition-colors ${
+                className={`rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] transition-colors cursor-pointer ${
                   activeCategory === cat
-                    ? "bg-ink text-bg"
-                    : "border border-line bg-bg-sunken/60 text-ink-muted hover:text-ink"
+                    ? "border border-[#dfc18a] bg-[#dfc18a] text-black font-bold"
+                    : "border border-[#38141d] bg-[#120408] text-[#dfc18a]/80 hover:text-white hover:border-[#dfc18a]/50"
                 }`}
               >
                 {cat}
@@ -177,28 +177,28 @@ export default function MenusPage() {
             {currentItems.map((item) => (
               <div
                 key={item.name}
-                className="group flex flex-col justify-between rounded-3xl border border-line bg-bg-raised p-6 transition-all duration-500 hover:border-gold-soft hover:shadow-lg"
+                className="group flex flex-col justify-between rounded-[2rem] border border-[#38141d] bg-[#14060a] p-6 sm:p-7 transition-all duration-500 hover:border-[#dfc18a]/60"
               >
                 <div>
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-display text-xl text-ink transition-colors group-hover:text-gold">
+                    <h3 className="font-luxury text-xl font-normal text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">
                       {item.name}
                     </h3>
-                    <span className="font-display text-base font-semibold text-gold shrink-0">
+                    <span className="font-luxury text-base font-semibold text-[#dfc18a] shrink-0">
                       {item.price}
                     </span>
                   </div>
 
                   {item.badge && (
-                    <span className="mt-2 inline-block rounded-full bg-gold/10 px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-gold">
+                    <span className="mt-2 inline-block rounded-full border border-[#dfc18a]/40 bg-[#250812] px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-[#dfc18a]">
                       {item.badge}
                     </span>
                   )}
 
-                  <p className="mt-3 text-xs leading-relaxed text-ink-muted">{item.description}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-[#baa89f] font-light">{item.description}</p>
                 </div>
 
-                <div className="mt-6 border-t border-line/60 pt-3 text-[0.68rem] font-semibold uppercase tracking-wider text-ink-faint">
+                <div className="mt-6 border-t border-[#38141d] pt-3 text-[0.68rem] font-semibold uppercase tracking-wider text-[#78656b]">
                   {item.category}
                 </div>
               </div>
@@ -206,16 +206,16 @@ export default function MenusPage() {
           </RevealGroup>
 
           {/* Download & Custom Menu Request */}
-          <div className="mt-16 flex flex-col items-center justify-between gap-6 rounded-3xl border border-line bg-bg-sunken p-8 sm:flex-row">
+          <div className="mt-16 flex flex-col items-center justify-between gap-6 rounded-[2rem] border border-[#38141d] bg-[#14060a] p-8 sm:p-10 sm:flex-row shadow-2xl">
             <div>
-              <h4 className="font-display text-2xl italic text-ink">Download Complete PDF Menu</h4>
-              <p className="mt-1 text-xs text-ink-muted">
+              <h4 className="font-luxury text-2xl font-normal text-[#faf5ee]">Download Complete PDF Menu</h4>
+              <p className="mt-1 text-xs text-[#baa89f] font-light">
                 Wine lists, dietary menus, and full tasting itineraries available upon request.
               </p>
             </div>
             <a
               href="/reservations"
-              className="rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-md hover:bg-gold-soft"
+              className="rounded-full border border-[#dfc18a] bg-[#dfc18a] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] text-black transition-all hover:bg-[#faf5ec] hover:scale-[1.02]"
             >
               Request Full Menu PDF →
             </a>

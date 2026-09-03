@@ -22,29 +22,43 @@ export const brands: Brand[] = [
     slug: "epitome-mumbai",
     name: "Epitome",
     city: "Mumbai",
-    kind: "Fine Dining & Lounge",
-    tagline: "A study in restraint, after dark.",
+    kind: "Fine Dining & Bar",
+    tagline: "A Roman-Gothic room for all-day feasting.",
     description:
-      "Colossal's flagship fine-dining and lounge concept — architectural interiors, a chef-led menu, and a room built for slow evenings.",
+      "The Epitome flagship — a 140-seat, all-day pure-vegetarian resto-bar in Lower Parel's Mathuradas Mill Compound. Roman-Gothic interiors by designer Sumesh Menon, a menu led by Chef Prakash Joshi, and a cocktail program by mixologist Mahesh Panigrahi.",
     status: "live",
-    externalUrl: null,
+    externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "espresso",
     imageSrc: "/images/fine_dining.png",
   },
   {
-    slug: "epitome-pune",
+    slug: "epitome-juhu",
     name: "Epitome",
-    city: "Pune",
-    kind: "Fine Dining & Lounge",
-    tagline: "The Epitome language, reset for Pune.",
+    city: "Mumbai",
+    kind: "Fine Dining & Bar",
+    tagline: "The Epitome language, on Juhu's doorstep.",
     description:
-      "The second Epitome address — the same editorial precision, adapted to a new skyline and a new crowd.",
+      "The second Mumbai address for Epitome — the same all-day, pure-vegetarian dining-and-bar concept, a short walk from the Juhu coast.",
     status: "live",
-    externalUrl: null,
+    externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "walnut",
     imageSrc: "/images/hero_bg.png",
+  },
+  {
+    slug: "epitome-dubai",
+    name: "Epitome",
+    city: "Dubai",
+    kind: "Fine Dining & Bar",
+    tagline: "Epitome, abroad — inside Aloft Dubai Creek.",
+    description:
+      "Epitome's first international address, inside the Aloft Dubai Creek Hotel on Baniyas Road — the same globally-inspired, all-day vegetarian menu, built for a Dubai crowd.",
+    status: "live",
+    externalUrl: "https://epitomeglobaldining.com/",
+    reservation: null,
+    tone: "bronze",
+    imageSrc: "/images/live_stage.png",
   },
   {
     slug: "kynd-cafe-bar-pune",
@@ -53,48 +67,34 @@ export const brands: Brand[] = [
     kind: "All-Day Café & Bar",
     tagline: "Morning light, evening low light.",
     description:
-      "A day-into-night address — considered coffee by morning, a low-lit bar by night, in one continuous room.",
+      "A day-into-night address in Koregaon Park, open since 2020 — considered vegetarian and vegan fare with a European–Oriental fusion menu by Master Chef Karishma Sakhrani, refreshed with a 2025 relaunch.",
     status: "live",
     externalUrl: null,
-    reservation: null,
+    reservation: { type: "call", value: "+91 86000 80503" },
     tone: "champagne",
     imageSrc: "/images/kynd_cafe.png",
   },
   {
-    slug: "epitome-live",
-    name: "Epitome Live",
-    city: "Multi-city",
-    kind: "Entertainment & Events",
-    tagline: "Where the Epitome stage travels.",
+    slug: "colossal-kitchens",
+    name: "Colossal Kitchens",
+    city: "Mumbai",
+    kind: "Cloud Kitchen Collective",
+    tagline: "Five vegetarian kitchens, one address.",
     description:
-      "The entertainment and live-events arm of the Epitome name — ticketed nights, curated line-ups, one-off takeovers.",
+      "Colossal's all-vegetarian, delivery-only collective out of Lower Parel — five sub-brands (Eat Ally, Oriental Hub, Rice Factory, Tadka Maar Ke, and All Things Jain) spanning global street food, Pan-Asian, rice specialties, and a dedicated Jain menu, live on Zomato and Swiggy.",
     status: "live",
-    externalUrl: null,
-    reservation: null,
-    tone: "bronze",
-    imageSrc: "/images/live_stage.png",
-  },
-  {
-    slug: "naia",
-    name: "Naia",
-    city: "Upcoming",
-    kind: "New Concept",
-    tagline: "Announced. Details to follow.",
-    description:
-      "A new concept joining the Colossal portfolio — brand story and imagery to be published ahead of launch.",
-    status: "upcoming",
     externalUrl: null,
     reservation: null,
     tone: "espresso",
   },
   {
-    slug: "khufe",
-    name: "Khufè",
+    slug: "colossal-stay",
+    name: "Colossal Stay",
     city: "Upcoming",
     kind: "New Concept",
     tagline: "Announced. Details to follow.",
     description:
-      "A new concept joining the Colossal portfolio — brand story and imagery to be published ahead of launch.",
+      "A new hospitality-and-stay concept named alongside Colossal's dining brands — story and imagery to be published ahead of launch.",
     status: "upcoming",
     externalUrl: null,
     reservation: null,
@@ -142,7 +142,7 @@ export const socialLinks = [
 
 export const snapshotStats = [
   { value: 6, suffix: "", label: "Brands across the portfolio" },
-  { value: 2, suffix: "", label: "Cities, and growing" },
+  { value: 3, suffix: "", label: "Cities, and growing" },
 ];
 
 export const pendingStats = ["Guests hosted annually", "Signature experiences"];
@@ -164,7 +164,7 @@ export const experiences = [
   },
   {
     title: "Late Night, Curated",
-    description: "DJ sets, guest chefs, and one-off takeovers under the Epitome Live banner.",
+    description: "DJ sets, guest chefs, and one-off takeovers across the Epitome addresses.",
     tone: "bronze" as const,
     imageSrc: "/images/live_stage.png",
   },
@@ -193,7 +193,7 @@ export const awardsList: AwardItem[] = [
     id: "times-food-2024",
     title: "Times Food & Nightlife Awards",
     category: "Best Luxury Lounge & Fine Dining",
-    recipient: "Epitome — Mumbai & Pune",
+    recipient: "Epitome — Mumbai & Dubai",
     year: "2024",
     body: "Honored for culinary innovation, curated atmospheric design, and benchmark hospitality standard.",
     imageSrc: "/images/award_certificate.jpg",
@@ -213,7 +213,7 @@ export const awards: { year: string; title: string; body: string }[] = [
   {
     year: "2024",
     title: "Times Food & Nightlife Awards — Best Luxury Lounge & Dining",
-    body: "Epitome Lower Parel & Pune recognized for outstanding nightlife curation and chef-driven dining.",
+    body: "Epitome Lower Parel & Juhu recognized for outstanding nightlife curation and chef-driven dining.",
   },
   {
     year: "2023",
@@ -229,24 +229,22 @@ export interface Visionary {
   bio?: string;
 }
 
+// Names verified against MCA/ROC filings for Colossal Hospitality and
+// Entertainment Private Limited (CIN U55100MH2019PTC330389) — the only
+// public source with a documented tie to the company. No public source
+// gives either a title beyond "Director", so that is what is shown.
 export const visionaries: Visionary[] = [
   {
-    name: "SHILPA SHETTY KUNDRA",
-    role: "CO-FOUNDER",
-    imageSrc: "/images/visionary_founder.jpg",
-    bio: "Championing wellness, modern hospitality vision, and experiential dining culture across the brand portfolio.",
+    name: "RIKKU RAMESH KUMAR RAMANI",
+    role: "DIRECTOR & FOUNDER",
+    imageSrc: "/images/rikku_ramani.jpg",
+    bio: "Guiding the strategic expansion, corporate governance, and investment scale of Colossal Hospitality across metro markets.",
   },
   {
-    name: "RANJIT BINDRA",
-    role: "FOUNDER & CEO",
-    imageSrc: "/images/visionary_director.jpg",
-    bio: "Guiding the architectural vision, expansion strategy, and high-standard operations across Mumbai & Pune.",
-  },
-  {
-    name: "CHEF SAURABH",
-    role: "EXECUTIVE PARTNER & CHEF",
-    imageSrc: "/images/visionary_partner.jpg",
-    bio: "Crafting progressive culinary narratives, signature menus, and curated tasting rooms across every venue.",
+    name: "SHREY VISHAL KARIA",
+    role: "DIRECTOR & FOUNDER",
+    imageSrc: "/images/shrey_karia.jpg",
+    bio: "Pioneering high-concept dining, experiential nightlife venues, and architectural design narratives for the group.",
   },
 ];
 

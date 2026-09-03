@@ -8,7 +8,7 @@ export default function BrandTile({ brand }: { brand: Brand }) {
   return (
     <Link
       href={`/brands/${brand.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-line bg-bg-raised/70 p-4 transition-all duration-500 hover:border-gold-soft hover:bg-bg-raised hover:shadow-xl hover:-translate-y-1"
+      className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-[#38141d] bg-[#14060a] p-4 transition-all duration-500 hover:border-[#dfc18a]/60 hover:-translate-y-1"
     >
       <div className="relative overflow-hidden rounded-2xl">
         <Plate
@@ -25,8 +25,8 @@ export default function BrandTile({ brand }: { brand: Brand }) {
           <span
             className={`rounded-full px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.14em] backdrop-blur-md ${
               isUpcoming
-                ? "border border-gold/40 bg-gold/20 text-gold"
-                : "border border-white/20 bg-black/40 text-white/90"
+                ? "border border-[#dfc18a]/40 bg-[#16060c]/85 text-[#dfc18a]"
+                : "border border-white/20 bg-black/60 text-white/90"
             }`}
           >
             {isUpcoming ? "Upcoming Concept" : brand.city}
@@ -37,22 +37,22 @@ export default function BrandTile({ brand }: { brand: Brand }) {
       <div className="mt-5 flex flex-1 flex-col justify-between px-1 pb-1">
         <div>
           <div className="flex items-center justify-between gap-2">
-            <h3 className="font-display text-2xl text-ink transition-colors group-hover:text-gold">
+            <h3 className="font-luxury text-2xl font-normal text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">
               {brand.name}
             </h3>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-line bg-bg-sunken text-ink-muted transition-all duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-white">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#38141d] bg-[#1d0810] text-[#dfc18a] transition-all duration-300 group-hover:border-[#dfc18a] group-hover:bg-[#dfc18a] group-hover:text-black">
               →
             </span>
           </div>
 
-          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-ink-faint">
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#78656b]">
             {brand.kind} {brand.city !== "Upcoming" && `· ${brand.city}`}
           </p>
 
-          <p className="mt-3 text-sm text-ink-muted line-clamp-2">{brand.tagline}</p>
+          <p className="mt-3 text-sm text-[#baa89f] font-light line-clamp-2">{brand.tagline}</p>
         </div>
 
-        <div className="mt-4 flex items-center justify-between border-t border-line/60 pt-3 text-[0.72rem] font-medium uppercase tracking-wider text-gold">
+        <div className="mt-4 flex items-center justify-between border-t border-[#38141d] pt-3 text-[0.72rem] font-bold uppercase tracking-wider text-[#dfc18a]">
           <span>Explore Venue</span>
           <span className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">View Details</span>
         </div>

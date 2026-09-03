@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function ExperiencesPage() {
   return (
-    <div className="bg-[#050505] text-[#f7f3eb]">
+    <div className="bg-[#080406] text-[#faf5ee]">
       
       {/* Experiences Hero Section */}
-      <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#050505] flex items-center justify-center border-b border-[#1c1916]">
+      <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#080406] flex items-center justify-center border-b border-[#2d1118]">
         <Image
           src="/images/live_stage.png"
           alt="Curated Experiences"
@@ -24,29 +24,29 @@ export default function ExperiencesPage() {
         />
         
         {/* Luxury Vignette Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/40 to-black/70 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#dfc18a]/10 blur-[150px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080406] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#68152a]/15 blur-[150px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#0e0d0c]/80 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#16060c]/85 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
             <span className="h-2 w-2 rounded-full bg-[#dfc18a] animate-ping" />
             <span className="text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#dfc18a]">
               CURATED EXPERIENCES
             </span>
           </div>
 
-          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient">
             BEYOND THE STANDARD TABLE.
           </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#b0a89d] leading-relaxed">
+          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
             The moments that sit above a standard reservation — reserved for guests who want the full sensory story of culinary craftsmanship and acoustic live performances.
           </p>
         </div>
       </section>
 
       {/* Experience Showcase Grid */}
-      <section className="py-24 md:py-32 border-b border-[#1c1916]">
+      <section className="py-24 md:py-32 border-b border-[#2d1118]">
         <div className="mx-auto max-w-[1560px] px-6 md:px-12">
           
           <div className="grid gap-10 sm:grid-cols-2">
@@ -55,34 +55,34 @@ export default function ExperiencesPage() {
               return (
                 <div
                   key={exp.title}
-                  className="group relative flex flex-col justify-between rounded-[2.2rem] border border-[#26221c] bg-[#11100f] p-6 sm:p-8 transition-all duration-500 hover:border-[#dfc18a]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.85)]"
+                  className="group relative flex flex-col justify-between rounded-[2.2rem] border border-[#38141d] bg-[#14060a] p-6 sm:p-8 transition-all duration-500 hover:border-[#dfc18a]/60"
                 >
                   <div>
-                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#1c1916]">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-[#1c070f]">
                       <Image
                         src={imageSrc}
                         alt={exp.title}
                         fill
-                        className="object-cover object-center brightness-[0.88] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                        className="object-cover object-center brightness-[0.85] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0e0407]/70 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="mt-8">
                       <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
                         EXCLUSIVE EXPERIENCE
                       </span>
-                      <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#f7f3eb] transition-colors group-hover:text-[#dfc18a] mt-2">
+                      <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#faf5ee] transition-colors group-hover:text-[#dfc18a] mt-2">
                         {exp.title}
                       </h3>
-                      <p className="mt-3 text-xs sm:text-sm text-[#b0a89d] leading-relaxed font-light">
+                      <p className="mt-3 text-xs sm:text-sm text-[#baa89f] leading-relaxed font-light">
                         {exp.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-8 border-t border-[#26221c] pt-5">
+                  <div className="mt-8 border-t border-[#38141d] pt-5">
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all duration-300 hover:text-white hover:translate-x-1"
@@ -96,7 +96,7 @@ export default function ExperiencesPage() {
           </div>
 
           {/* Bottom Custom Concierge Banner */}
-          <div className="mt-20 rounded-[2.5rem] border border-[#26221c] bg-[#11100f] p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="mt-20 rounded-[2.5rem] border border-[#38141d] bg-[#14060a] p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
             <div>
               <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
                 CUSTOM CONCIERGE
@@ -104,14 +104,14 @@ export default function ExperiencesPage() {
               <h3 className="font-luxury text-2xl sm:text-4xl font-normal tracking-[0.02em] text-gold-gradient mt-2">
                 PLANNING A PRIVATE TAKEOVER?
               </h3>
-              <p className="mt-2 text-xs sm:text-sm text-[#b0a89d] font-light max-w-xl">
+              <p className="mt-2 text-xs sm:text-sm text-[#baa89f] font-light max-w-xl">
                 Planning something specific — a chef's table, private dining room, or brand collaboration? Our concierge team will tailor every detail.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-lg transition-all duration-300 hover:bg-[#f2dbab] hover:scale-[1.02] flex-shrink-0"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:bg-[#faf5ec] hover:scale-[1.02] flex-shrink-0"
             >
               <span>Contact Concierge</span>
               <span>→</span>
