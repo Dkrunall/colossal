@@ -236,15 +236,13 @@ export interface Visionary {
 export const visionaries: Visionary[] = [
   {
     name: "RIKKU RAMESH KUMAR RAMANI",
-    role: "DIRECTOR & FOUNDER",
+    role: "DIRECTOR",
     imageSrc: "/images/rikku_ramani.jpg",
-    bio: "Guiding the strategic expansion, corporate governance, and investment scale of Colossal Hospitality across metro markets.",
   },
   {
     name: "SHREY VISHAL KARIA",
-    role: "DIRECTOR & FOUNDER",
+    role: "DIRECTOR",
     imageSrc: "/images/shrey_karia.jpg",
-    bio: "Pioneering high-concept dining, experiential nightlife venues, and architectural design narratives for the group.",
   },
 ];
 
