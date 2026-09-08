@@ -1,27 +1,29 @@
 import Image from "next/image";
-import { visionaries } from "@/lib/site-data";
+import { visionaries, type Visionary } from "@/lib/site-data";
 
-export default function VisionariesSection() {
+export default function VisionariesSection({ people = visionaries }: { people?: Visionary[] }) {
+  const gridCols = people.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3 max-w-6xl" : "sm:grid-cols-2 max-w-3xl";
+
   return (
     <section className="bg-[#080406] py-24 md:py-32 border-b border-[#2d1118]">
       <div className="mx-auto max-w-[1560px] px-6 md:px-12">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[#dfc18a]/60 bg-[#5c1326] px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#f4e0b5] mb-4">
-            LEADERSHIP
+            LEADERSHIP &amp; CULINARY DIRECTORS
           </span>
           <h2 className="font-luxury text-3xl sm:text-5xl md:text-6xl font-normal tracking-[0.02em] text-gold-gradient">
             OUR VISIONARIES
           </h2>
           <p className="mt-3 text-xs sm:text-sm text-[#baa89f]">
-            The directors behind Colossal Hospitality.
+            The leadership, creative direction and culinary minds shaping Colossal Hospitality.
           </p>
         </div>
 
         {/* Portrait Cards Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
-          {visionaries.map((person) => (
+        <div className={`grid gap-8 mx-auto ${gridCols}`}>
+          {people.map((person) => (
             <div
               key={person.name}
               className="group relative aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#6b162a] bg-gradient-to-b from-[#340916] to-[#120307] transition-all duration-500 hover:border-[#dfc18a]"

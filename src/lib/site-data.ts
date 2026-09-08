@@ -22,10 +22,10 @@ export const brands: Brand[] = [
     slug: "epitome-mumbai",
     name: "Epitome",
     city: "Mumbai",
-    kind: "Fine Dining & Bar",
-    tagline: "A Roman-Gothic room for all-day feasting.",
+    kind: "Fine Dining & Lounge",
+    tagline: "The standard the rest of the portfolio is measured against.",
     description:
-      "The Epitome flagship — a 140-seat, all-day pure-vegetarian resto-bar in Lower Parel's Mathuradas Mill Compound. Roman-Gothic interiors by designer Sumesh Menon, a menu led by Chef Prakash Joshi, and a cocktail program by mixologist Mahesh Panigrahi.",
+      "Colossal's flagship fine-dining and lounge address. Architectural interiors, a chef-led tasting menu and a room built for slow, considered evenings — Epitome Mumbai set the standard the rest of the portfolio is measured against.",
     status: "live",
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
@@ -33,41 +33,27 @@ export const brands: Brand[] = [
     imageSrc: "/images/fine_dining.png",
   },
   {
-    slug: "khufe",
-    name: "Khufè",
-    city: "Mumbai",
-    kind: "Lifestyle Concept",
-    tagline: "Announced. Details to follow.",
-    description:
-      "A concept joining the Colossal portfolio — full brand story, address, and imagery to be published ahead of launch.",
-    status: "live",
-    externalUrl: null,
-    reservation: null,
-    tone: "walnut",
-    imageSrc: "/images/hero_bg.png",
-  },
-  {
     slug: "epitome-pune",
     name: "Epitome",
     city: "Pune",
-    kind: "Fine Dining & Bar",
-    tagline: "The Epitome language, reset for Pune.",
+    kind: "Fine Dining & Lounge",
+    tagline: "Same kitchen standard, same architectural language, reimagined for Pune.",
     description:
-      "The Epitome address in Pune — the same all-day, pure-vegetarian dining-and-bar concept, adapted to a new skyline and a new crowd.",
+      "The second Epitome address, carrying the same editorial precision to a new skyline and a new crowd. Same kitchen standard, same architectural language, reimagined for Pune.",
     status: "live",
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "bronze",
-    imageSrc: "/images/live_stage.png",
+    imageSrc: "/images/hero_bg.png",
   },
   {
     slug: "kynd-cafe-bar-pune",
     name: "Kynd Café & Bar",
     city: "Pune",
     kind: "All-Day Café & Bar",
-    tagline: "Morning light, evening low light.",
+    tagline: "Built for guests who don't want to choose between the two.",
     description:
-      "A day-into-night address in Koregaon Park, open since 2020 — considered vegetarian and vegan fare with a European–Oriental fusion menu by Master Chef Karishma Sakhrani, refreshed with a 2025 relaunch.",
+      "A day-into-night address in one continuous room — considered coffee and all-day dining by morning, a low-lit bar after dark. Built for guests who don't want to choose between the two.",
     status: "live",
     externalUrl: null,
     reservation: { type: "call", value: "+91 86000 80503" },
@@ -75,17 +61,46 @@ export const brands: Brand[] = [
     imageSrc: "/images/kynd_cafe.png",
   },
   {
-    slug: "colossal-kitchens",
-    name: "Colossal Kitchens",
-    city: "Mumbai",
-    kind: "Cloud Kitchen Collective",
-    tagline: "Five vegetarian kitchens, one address.",
+    slug: "epitome-live",
+    name: "Epitome Live",
+    city: "Multi-city",
+    kind: "Entertainment & Events",
+    tagline: "Ticketed nights, curated DJ line-ups, and one-off takeovers.",
     description:
-      "Colossal's all-vegetarian, delivery-only collective out of Lower Parel — five sub-brands (Eat Ally, Oriental Hub, Rice Factory, Tadka Maar Ke, and All Things Jain) spanning global street food, Pan-Asian, rice specialties, and a dedicated Jain menu, live on Zomato and Swiggy.",
+      "The live-entertainment arm of the Epitome name — ticketed nights, curated DJ line-ups and one-off takeovers across the portfolio's addresses in Mumbai and Pune.",
     status: "live",
     externalUrl: null,
     reservation: null,
+    tone: "walnut",
+    imageSrc: "/images/live_stage.png",
+  },
+  {
+    slug: "naia",
+    name: "Naia",
+    city: "Upcoming",
+    kind: "New Concept",
+    tagline: "Launch TBA.",
+    description:
+      "A new concept joining the Colossal portfolio. Brand story, imagery and location to follow ahead of launch.",
+    status: "upcoming",
+    externalUrl: null,
+    reservation: null,
     tone: "espresso",
+    imageSrc: "/images/hero_bg.png",
+  },
+  {
+    slug: "khufe",
+    name: "Khufè",
+    city: "Upcoming",
+    kind: "New Concept",
+    tagline: "Launch TBA.",
+    description:
+      "A new concept joining the Colossal portfolio. Brand story, imagery and location to follow ahead of launch.",
+    status: "upcoming",
+    externalUrl: null,
+    reservation: null,
+    tone: "walnut",
+    imageSrc: "/images/fine_dining.png",
   },
 ];
 
@@ -128,7 +143,7 @@ export const socialLinks = [
 ];
 
 export const snapshotStats = [
-  { value: 5, suffix: "", label: "Brands across the portfolio" },
+  { value: 6, suffix: "", label: "Brands across the portfolio" },
   { value: 2, suffix: "", label: "Cities, and growing" },
 ];
 
@@ -139,7 +154,7 @@ export const pressMentions: string[] = [];
 export const experiences = [
   {
     title: "Chef's Table",
-    description: "A front-row seat to the kitchen, reserved for parties who want the full narrative of the menu.",
+    description: "A front-row seat to the kitchen, for parties who want the full narrative behind the menu.",
     tone: "espresso" as const,
     imageSrc: "/images/fine_dining.png",
   },
@@ -151,7 +166,7 @@ export const experiences = [
   },
   {
     title: "Late Night, Curated",
-    description: "DJ sets, guest chefs, and one-off takeovers across the Epitome addresses.",
+    description: "DJ sets, guest chefs and one-off takeovers under the Epitome Live banner.",
     tone: "bronze" as const,
     imageSrc: "/images/live_stage.png",
   },
@@ -180,18 +195,9 @@ export const awardsList: AwardItem[] = [
     id: "times-food-2024",
     title: "Times Food & Nightlife Awards",
     category: "Best Luxury Lounge & Fine Dining",
-    recipient: "Epitome — Mumbai & Pune",
+    recipient: "Epitome, Mumbai & Pune",
     year: "2024",
-    body: "Honored for culinary innovation, curated atmospheric design, and benchmark hospitality standard.",
-    imageSrc: "/images/award_certificate.jpg",
-  },
-  {
-    id: "epicurean-excellence-2023",
-    title: "Epicurean Excellence Award",
-    category: "Iconic Hospitality Concept of the Year",
-    recipient: "Colossal Hospitality Group",
-    year: "2023",
-    body: "Recognizing outstanding creative curation across multi-city venues, bar craft, and event production.",
+    body: "Recognized for culinary innovation and design-led hospitality, including Best Luxury Lounge & Fine Dining, Times Food & Nightlife Awards 2024 — awarded to Epitome, Mumbai & Pune.",
     imageSrc: "/images/award_certificate.jpg",
   },
 ];
@@ -199,13 +205,8 @@ export const awardsList: AwardItem[] = [
 export const awards: { year: string; title: string; body: string }[] = [
   {
     year: "2024",
-    title: "Times Food & Nightlife Awards — Best Luxury Lounge & Dining",
-    body: "Epitome Mumbai & Pune recognized for outstanding nightlife curation and chef-driven dining.",
-  },
-  {
-    year: "2023",
-    title: "Hospitality Excellence Honours — Iconic Day-to-Night Venue",
-    body: "Kynd Café & Bar awarded for exemplary café culture and atmospheric evening transition.",
+    title: "Times Food & Nightlife Awards — Best Luxury Lounge & Fine Dining",
+    body: "Awarded to Epitome, Mumbai & Pune.",
   },
 ];
 
@@ -216,21 +217,37 @@ export interface Visionary {
   bio?: string;
 }
 
-// Names provided directly by the client. No verified bio or portrait
-// on file yet, so generic placeholder imagery is used until real photos
-// are supplied.
+// Per the client-supplied website copy, the Home page and About page
+// "Our Visionaries" sections list different people — reproduced here
+// as two separate lists rather than reconciled into one.
 export const visionaries: Visionary[] = [
   {
     name: "JIGAR SANGHVI",
-    role: "DIRECTOR",
+    role: "Designation to be added",
     imageSrc: "/images/jigar_sanghvi.jpg",
-    bio: "Guiding the strategic development, high-energy dining concepts, and hospitality scale across the group.",
   },
   {
     name: "KRIPESH SANGHVI",
-    role: "DIRECTOR",
+    role: "Designation to be added",
     imageSrc: "/images/kripesh_sanghvi.jpg",
-    bio: "Pioneering atmospheric lounge culture, nightlife curation, and guest experience benchmarks for Colossal.",
+  },
+];
+
+export const aboutVisionaries: Visionary[] = [
+  {
+    name: "SHILPA SHETTY KUNDRA",
+    role: "CO-FOUNDER",
+    imageSrc: "/images/visionary_founder.jpg",
+  },
+  {
+    name: "RANJIT BINDRA",
+    role: "FOUNDER & CEO",
+    imageSrc: "/images/visionary_director.jpg",
+  },
+  {
+    name: "CHEF SAURABH",
+    role: "EXECUTIVE PARTNER & CHEF",
+    imageSrc: "/images/visionary_partner.jpg",
   },
 ];
 

@@ -24,7 +24,7 @@ export default function ExperienceExtraordinary() {
 
         {/* Subtitle */}
         <p className="mt-4 text-xs sm:text-sm md:text-base font-light tracking-wide text-[#f4e0b5]/85 max-w-xl mx-auto">
-          Defining the future of hospitality, culinary artistry, and curated evening spaces across Mumbai &amp; Pune.
+          Colossal Hospitality builds and grows a portfolio of design-led restaurants, bars and live-entertainment brands across Mumbai and Pune — each one distinct, each one held to the same standard of craft.
         </p>
 
         {/* Action Button & Editorial Link matching reference */}

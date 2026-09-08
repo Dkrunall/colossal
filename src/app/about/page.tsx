@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VisionariesSection from "@/components/home/VisionariesSection";
 import Snapshot from "@/components/home/Snapshot";
+import { aboutVisionaries } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About Us · Colossal Hospitality Group",
@@ -13,8 +14,8 @@ const pillars = [
   { title: "PREMIUM", body: "Every room is built to a standard, not a budget.", code: "01" },
   { title: "EXPERIENTIAL", body: "We design for how a night unfolds, not just how a room looks.", code: "02" },
   { title: "CONTEMPORARY", body: "Current without chasing trends — spaces built to age well.", code: "03" },
-  { title: "VISIONARY", body: "Each brand is a bet on a concept we believe deserves to exist.", code: "04" },
-  { title: "LIFESTYLE-LED", body: "Guests, not covers. We design around how people actually live.", code: "05" },
+  { title: "VISIONARY", body: "Each brand is a concept we believe deserves to exist.", code: "04" },
+  { title: "LIFESTYLE-LED", body: "We design around how people actually live, not just where they eat.", code: "05" },
 ];
 
 export default function AboutPage() {
@@ -85,10 +86,10 @@ export default function AboutPage() {
 
             <div className="mt-8 space-y-5 text-sm sm:text-base font-light text-[#baa89f] leading-relaxed">
               <p>
-                The parent brand balances the trust and professionalism guests, partners, and investors expect from a hospitality group with the design sensibility and cultural fluency of a <span className="text-[#dfc18a] font-medium">lifestyle brand</span>.
+                We lead with the group — its vision, its scale, its standards — while giving every individual brand room to keep its own identity. <span className="text-[#faf5ee] font-normal">Colossal is the frame; each brand is its own picture.</span>
               </p>
               <p>
-                We lead with the group — its vision, its scale, its standards — while giving every individual brand room to keep its own identity. <span className="text-[#faf5ee] font-normal">Colossal is the frame; each brand is its own picture.</span>
+                The parent brand carries the trust and professionalism guests, partners and investors expect from a hospitality group, paired with the design sensibility and cultural fluency of a <span className="text-[#dfc18a] font-medium">lifestyle brand</span>.
               </p>
             </div>
 
@@ -124,7 +125,7 @@ export default function AboutPage() {
               WHAT WE STAND FOR
             </h2>
             <p className="mt-4 text-xs sm:text-sm text-[#f4e0b5]/85 font-light max-w-xl mx-auto">
-              Five non-negotiable principles that guide every space, menu, and experience we create.
+              Five principles that guide every space, menu and experience we create.
             </p>
           </div>
 
@@ -154,7 +155,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership & Visionaries Grid */}
-      <VisionariesSection />
+      <VisionariesSection people={aboutVisionaries} />
 
       {/* Group Snapshot Numbers */}
       <Snapshot />
@@ -169,7 +170,7 @@ export default function AboutPage() {
             COME BUILD THE NEXT ROOM WITH US
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-xs sm:text-sm text-[#baa89f] font-light">
-            We are actively expanding across culinary, operations, management, and corporate roles.
+            We are actively expanding across culinary, operations, management and corporate roles.
           </p>
           <div className="mt-8 flex justify-center">
             <Link

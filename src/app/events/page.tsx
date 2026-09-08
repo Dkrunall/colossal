@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { brands } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Live Events · Colossal Hospitality Group",
@@ -8,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function EventsPage() {
+  const liveBrand = brands.find((b) => b.slug === "epitome-live");
+
   return (
     <div className="bg-[#080406] text-[#faf5ee]">
       
@@ -30,7 +33,7 @@ export default function EventsPage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#16060c]/85 px-4 py-1.5 backdrop-blur-xl mb-6 shadow-xl">
             <span className="h-2 w-2 rounded-full bg-[#dfc18a] animate-ping" />
             <span className="text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#dfc18a]">
-              EVENTS &amp; LIVE NIGHTS
+              EPITOME LIVE &amp; EVENTS
             </span>
           </div>
 
@@ -39,7 +42,7 @@ export default function EventsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            Curated DJ sets, live acoustic sets, and guest chef pop-ups across our addresses in Mumbai &amp; Pune.
+            Curated DJ sets, live acoustic sets, guest chef pop-ups and milestone brand takeovers under the Epitome Live banner, across Mumbai and Pune.
           </p>
         </div>
       </section>
@@ -56,15 +59,15 @@ export default function EventsPage() {
               SEASONAL LIVE CALENDAR
             </h2>
             <p className="mt-4 text-xs sm:text-sm text-[#baa89f] font-light max-w-xl mx-auto leading-relaxed">
-              Check back soon for confirmed artist lineups and guest chef tasting dates, or explore our full brand portfolio.
+              Check back soon for confirmed artist lineups and guest chef tasting dates, or explore our live entertainment arm ({liveBrand?.name ?? "Epitome Live"}).
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/brands"
+                href="/brands/epitome-live"
                 className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:bg-[#faf5ec] hover:scale-[1.02]"
               >
-                <span>Our Brands →</span>
+                <span>Epitome Live →</span>
               </Link>
               <Link
                 href="/banquets"

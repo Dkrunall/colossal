@@ -40,7 +40,7 @@ export default function ExperiencesPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            The moments that sit above a standard reservation — reserved for guests who want the full sensory story of culinary craftsmanship and acoustic live performances.
+            The moments that sit above a standard reservation — reserved for guests who want the full sensory story of culinary craft and live performance.
           </p>
         </div>
       </section>

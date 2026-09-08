@@ -31,7 +31,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-[34ch] text-xs sm:text-sm leading-relaxed text-[#e2d5ce] font-light">
-              A portfolio of distinct, design-led destinations across dining, cocktail lounges, and cloud kitchens in Mumbai &amp; Pune.
+              A portfolio of distinct, design-led destinations across dining, cocktail lounges, and live-entertainment brands in Mumbai &amp; Pune.
             </p>
 
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/60 bg-[#5a1224] px-4 py-1.5 text-[0.68rem] font-semibold uppercase tracking-wider text-[#dfc18a]">

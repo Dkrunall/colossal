@@ -79,7 +79,7 @@ export default function ContactPage() {
                   COLOSSAL HOSPITALITY GROUP
                 </h3>
                 <p className="mt-1 text-xs text-[#baa89f] font-light">
-                  Mumbai &amp; Pune Administrative Offices
+                  Mumbai &amp; Pune Administrative Offices, India
                 </p>
               </div>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   CONCIERGE HOURS
                 </span>
                 <p className="mt-2 text-xs sm:text-sm text-[#baa89f] font-light">
-                  Monday – Saturday: 10:00 AM – 7:00 PM IST
+                  Monday – Saturday, 10:00 AM – 7:00 PM IST
                 </p>
               </div>
             </div>

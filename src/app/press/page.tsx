@@ -58,6 +58,14 @@ export default function PressPage() {
             </h2>
           </div>
 
+          {pressMentions.length === 0 && (
+            <div className="mx-auto max-w-2xl rounded-[2rem] border border-dashed border-[#38141d] bg-[#0e0407] p-10 text-center">
+              <p className="text-xs sm:text-sm text-[#baa89f] font-light">
+                Coverage logo wall and linked headlines to populate as press is secured.
+              </p>
+            </div>
+          )}
+
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {pressMentions.map((mention, idx) => (
               <div
@@ -92,7 +100,7 @@ export default function PressPage() {
                 WORKING ON A STORY ABOUT COLOSSAL?
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-[#baa89f] font-light max-w-xl">
-                Get in touch for high-res imagery, brand story kits, executive interviews, or leadership commentary.
+                Working on a story about Colossal? Get in touch for high-resolution imagery, brand story kits, executive interviews, or leadership commentary.
               </p>
             </div>
 

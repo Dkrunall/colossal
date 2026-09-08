@@ -46,7 +46,7 @@ export default function ReservationsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            Select your desired venue below for instant direct channel access — WhatsApp concierge, call reservations, or online table booking.
+            Select your destination below for instant direct-channel access — WhatsApp concierge, a phone line, or the venue's own booking platform.
           </p>
         </div>
       </section>

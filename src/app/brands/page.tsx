@@ -43,7 +43,7 @@ export default function BrandsPage() {
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
-            Each brand below keeps its own identity, its own city, its own crowd. Select one to preview its story and explore its culinary and acoustic profile.
+            Each brand below keeps its own identity, its own city and its own crowd. Select one to preview its story before moving to its dedicated site for reservations, menus and events.
           </p>
         </div>
       </section>
@@ -94,7 +94,7 @@ export default function BrandsPage() {
                       {brand.description}
                     </p>
                     <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all group-hover:text-white">
-                      <span>Explore Address →</span>
+                      <span>Explore {brand.name} →</span>
                     </div>
                   </div>
                 </Link>

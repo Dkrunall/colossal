@@ -8,19 +8,19 @@ const SPACE_TYPES = [
   {
     title: "PRIVATE DINING SUITES",
     capacity: "8 to 24 Guests",
-    body: "Closed-door architectural suites built for private celebrations, C-suite dinners, and exclusive gatherings.",
+    body: "Closed-door architectural suites built for private celebrations, leadership dinners and exclusive gatherings.",
     imageSrc: "/images/fine_dining.png",
   },
   {
     title: "SEMI-PRIVATE LOUNGES",
     capacity: "25 to 60 Guests",
-    body: "A designated elevated section of the main lounge or café, maintaining ambient energy with exclusive service.",
+    body: "A designated, elevated section of the main lounge or café, keeping the ambient energy of the room with dedicated service.",
     imageSrc: "/images/kynd_cafe.png",
   },
   {
     title: "FULL VENUE BUYOUTS",
     capacity: "80 to 250+ Guests",
-    body: "The complete venue experience, customized entirely for luxury brand launches, milestone events, and private galas.",
+    body: "The complete venue experience, customized entirely for brand launches, milestone events and private galas.",
     imageSrc: "/images/live_stage.png",
   },
 ];
@@ -134,7 +134,7 @@ export default function BanquetsPage() {
                   TAILOR YOUR OCCASION.
                 </h3>
                 <p className="mt-3 text-xs sm:text-sm text-[#f4e0b5]/85 leading-relaxed font-light max-w-lg">
-                  Select your occasion type below to customize your consultation directly with our director of private events.
+                  Select an occasion type to route directly to a consultation with our director of private events.
                 </p>
 
                 {/* Event Type Pills */}
@@ -181,7 +181,7 @@ export default function BanquetsPage() {
                 </div>
 
                 <p className="text-xs text-[#baa89f] leading-relaxed font-light">
-                  Includes dedicated sommelier, custom printed menus, private entrance option, and bespoke audio-visual setup.
+                  Includes a dedicated sommelier, custom printed menus, a private entrance option, and bespoke audio-visual setup.
                 </p>
 
                 <Link

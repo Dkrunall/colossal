@@ -53,7 +53,7 @@ export default function BrandsShowcase() {
             OUR BRANDS
           </h2>
           <p className="mt-4 text-xs sm:text-sm md:text-base text-[#baa89f] leading-relaxed max-w-2xl mx-auto font-light">
-            A portfolio of distinct living experiences, each holding its own character, designed around how people live, gather, and celebrate.
+            A portfolio of distinct living experiences, each holding its own character — designed around how people live, gather and celebrate. Explore Epitome, Kynd Café &amp; Bar, Epitome Live, and the concepts joining the portfolio next.
           </p>
         </div>
 
@@ -146,6 +146,16 @@ export default function BrandsShowcase() {
           >
             ❯
           </button>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/brands"
+            className="group inline-flex items-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black transition-all duration-300 hover:bg-[#faf5ec] hover:scale-[1.02]"
+          >
+            <span>Explore Our Brands</span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
 
       </div>

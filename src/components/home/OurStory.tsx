@@ -26,7 +26,7 @@ export default function OurStory() {
 
         {/* Story Narrative with Velvet Maroon Editorial Typography and Pale Gold Highlights */}
         <p className="mt-8 text-base sm:text-lg md:text-xl font-light text-[#f4e0b5]/90 leading-relaxed max-w-3xl mx-auto">
-          <span className="text-[#dfc18a] font-semibold">Colossal Hospitality</span> operates a growing portfolio of distinct hospitality and entertainment brands. We balance the <span className="text-white font-medium">corporate credibility</span> of a hospitality group with the instincts and cultural fluency of a <span className="text-[#dfc18a] font-semibold">lifestyle brand</span>. Spaces are designed around how people actually live, gathering under architectural rooms and chef-led culinary narratives across Mumbai and Pune.
+          <span className="text-[#dfc18a] font-semibold">Colossal Hospitality</span> operates a growing portfolio of restaurants, bars and entertainment brands across Mumbai and Pune. We build with the <span className="text-white font-medium">credibility</span> of a hospitality group and the instincts of a <span className="text-[#dfc18a] font-semibold">lifestyle brand</span> — spaces designed around how people actually gather, not just where they sit.
         </p>
 
         {/* Editorial Action Link matching reference image ("НАЧАТЬ ТВОРИТЬ ИСТОРИЮ →") */}
@@ -35,7 +35,7 @@ export default function OurStory() {
             href="/about"
             className="editorial-link text-xs tracking-[0.24em]"
           >
-            <span>READ OUR FULL STORY</span>
+            <span>READ MORE</span>
             <span>→</span>
           </Link>
         </div>

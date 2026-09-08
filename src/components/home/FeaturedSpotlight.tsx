@@ -3,19 +3,19 @@ import Link from "next/link";
 
 const SPOTLIGHT_ITEMS = [
   {
-    title: "COLOSSAL BANQUETS",
+    title: "BANQUETS",
     category: "Private Dining & Grand Celebrations",
     description:
-      "From intimate private dining suites to milestone celebratory evenings, corporate galas, and bespoke brand takeovers, our venues combine seamless hospitality, custom menus, and dedicated event planning.",
+      "From an eight-seat private suite to a full venue buyout, every Colossal address is available for private dining, corporate dinners and milestone celebrations.",
     image: "/images/fine_dining.png",
     link: "/banquets",
     actionText: "Explore Banquets →",
   },
   {
-    title: "THE CURATED EXPERIENCES",
+    title: "CURATED EXPERIENCES",
     category: "Chef's Table & Live Acoustics",
     description:
-      "An indulgent dining and sensory experience crafted across all addresses. Chef's table tasting journeys, omakase courses, and curated DJ sets across Epitome Mumbai and Pune.",
+      "Chef's tables, private dining rooms and curated nights under the Epitome Live banner — built for guests who want more than a reservation.",
     image: "/images/live_stage.png",
     link: "/experiences",
     actionText: "Explore Experiences →",
