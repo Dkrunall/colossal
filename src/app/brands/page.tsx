@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { brands } from "@/lib/site-data";
+import { brands, brandDisplayName } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Our Brands · Colossal Hospitality Group",
@@ -86,6 +86,18 @@ export default function BrandsPage() {
                     </span>
                   </div>
 
+                  {brand.logoSrc && (
+                    <div className="absolute top-5 right-5 flex h-10 items-center justify-center rounded-xl border border-[#dfc18a]/25 bg-[#14060a] px-2.5 shadow-lg">
+                      <Image
+                        src={brand.logoSrc}
+                        alt=""
+                        width={120}
+                        height={60}
+                        className="h-6 w-auto object-contain"
+                      />
+                    </div>
+                  )}
+
                   <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
                     <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">
                       {brand.name}
@@ -94,7 +106,7 @@ export default function BrandsPage() {
                       {brand.description}
                     </p>
                     <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#dfc18a] transition-all group-hover:text-white">
-                      <span>Explore {brand.name} →</span>
+                      <span>Explore {brandDisplayName(brand)} →</span>
                     </div>
                   </div>
                 </Link>
@@ -140,6 +152,18 @@ export default function BrandsPage() {
                       Upcoming
                     </span>
                   </div>
+
+                  {brand.logoSrc && (
+                    <div className="absolute top-5 right-5 flex h-10 items-center justify-center rounded-xl border border-[#dfc18a]/25 bg-[#14060a] px-2.5 shadow-lg">
+                      <Image
+                        src={brand.logoSrc}
+                        alt=""
+                        width={120}
+                        height={60}
+                        className="h-6 w-auto object-contain"
+                      />
+                    </div>
+                  )}
 
                   <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
                     <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#faf5ee]">

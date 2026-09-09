@@ -15,7 +15,16 @@ export type Brand = {
   reservation: { type: "whatsapp" | "call" | "platform"; value: string } | null;
   tone: "espresso" | "bronze" | "walnut" | "champagne";
   imageSrc?: string;
+  logoSrc?: string; // real brand logo/wordmark, distinct from the venue photography in imageSrc
 };
+
+// "Epitome" is shared across three portfolio entries (Mumbai, Pune,
+// Live) — disambiguate wherever a brand name stands alone in UI copy
+// (CTAs, modals) so "Epitome Mumbai" and "Epitome Pune" don't both
+// collapse to the same label.
+export function brandDisplayName(brand: Brand): string {
+  return brand.name === "Epitome" ? `${brand.name} ${brand.city}` : brand.name;
+}
 
 export const brands: Brand[] = [
   {
@@ -31,6 +40,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "espresso",
     imageSrc: "/images/fine_dining.png",
+    logoSrc: "/images/logo-epitome.png",
   },
   {
     slug: "epitome-pune",
@@ -45,6 +55,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "bronze",
     imageSrc: "/images/hero_bg.png",
+    logoSrc: "/images/logo-epitome.png",
   },
   {
     slug: "kynd-cafe-bar-pune",
@@ -59,6 +70,7 @@ export const brands: Brand[] = [
     reservation: { type: "call", value: "+91 86000 80503" },
     tone: "champagne",
     imageSrc: "/images/kynd_cafe.png",
+    logoSrc: "/images/logo-kynd.png",
   },
   {
     slug: "epitome-live",
@@ -73,6 +85,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "walnut",
     imageSrc: "/images/live_stage.png",
+    logoSrc: "/images/logo-epitome.png",
   },
   {
     slug: "naia",
@@ -101,6 +114,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "walnut",
     imageSrc: "/images/fine_dining.png",
+    logoSrc: "/images/logo-khufe.png",
   },
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { ensureGsap } from "@/lib/gsap";
 
 type SplitHeadingProps = {
@@ -10,6 +10,18 @@ type SplitHeadingProps = {
   delay?: number;
   triggerOnScroll?: boolean;
 };
+
+// `background-image`/`background-clip` (used by gradient-text utilities like
+// `.text-gold-gradient`) don't inherit to descendants by default, and CSS
+// `inherit` only pulls from the immediate parent — force it at every wrapper
+// level below so it actually flows down from the heading element instead of
+// each word rendering with fully transparent (invisible) text.
+const inheritGradientStyle = {
+  backgroundImage: "inherit",
+  WebkitBackgroundClip: "inherit",
+  backgroundClip: "inherit",
+  WebkitTextFillColor: "inherit",
+} as const;
 
 /** Reveals a headline word by word, each word masked until it rises into place. */
 export default function SplitHeading({
@@ -57,15 +69,27 @@ export default function SplitHeading({
   return (
     <Tag ref={ref as never} className={className}>
       {words.map((word, i) => (
-        <span
-          key={`${word}-${i}`}
-          style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}
-        >
-          <span data-word-inner style={{ display: "inline-block" }}>
-            {word}
-            {i < words.length - 1 ? " " : ""}
+        <Fragment key={`${word}-${i}`}>
+          <span
+            style={{
+              display: "inline-block",
+              overflow: "hidden",
+              verticalAlign: "top",
+              ...inheritGradientStyle,
+            }}
+          >
+            <span
+              data-word-inner
+              style={{ display: "inline-block", ...inheritGradientStyle }}
+            >
+              {word}
+            </span>
           </span>
-        </span>
+          {/* Rendered outside the overflow:hidden wrapper — a trailing
+              space as the last character inside an inline-block gets
+              collapsed by the browser, which ran every word together. */}
+          {i < words.length - 1 ? " " : ""}
+        </Fragment>
       ))}
     </Tag>
   );

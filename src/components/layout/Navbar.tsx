@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { primaryNav } from "@/lib/site-data";
@@ -55,13 +56,21 @@ export default function Navbar() {
       <header className="fixed inset-x-0 bottom-4 sm:bottom-8 z-50 px-3 sm:px-4 flex justify-center pointer-events-none transition-all duration-500">
         <div className="pointer-events-auto flex items-center justify-between md:justify-center gap-2 sm:gap-2.5 rounded-full border border-[#dfc18a]/70 bg-[#420d1a]/95 p-2 sm:py-2.5 sm:px-3 backdrop-blur-3xl shadow-2xl w-[calc(100vw-1.5rem)] max-w-[460px] md:w-auto md:max-w-full transition-all duration-500 hover:border-[#dfc18a]">
           
-          {/* Leftmost Logo Box (C. / COLOSSAL style) */}
+          {/* Leftmost Logo Badge (Colossal shield mark) */}
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex items-center justify-center rounded-full border border-[#dfc18a]/60 bg-[#5a1224] px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-extrabold tracking-[0.16em] text-[#dfc18a] font-luxury transition-all duration-300 hover:border-[#dfc18a] hover:bg-[#70162d] hover:text-[#fff5dc] flex-shrink-0"
+            aria-label="Colossal Hospitality — Home"
+            className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#dfc18a]/60 bg-[#5a1224] p-1.5 transition-all duration-300 hover:border-[#dfc18a] hover:bg-[#70162d] flex-shrink-0"
           >
-            <span>C.</span>
+            <Image
+              src="/images/logo-mark.png"
+              alt="Colossal Hospitality"
+              width={365}
+              height={488}
+              className="h-full w-full object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav Items (hidden on mobile, visible md:) */}

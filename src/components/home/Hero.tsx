@@ -76,6 +76,18 @@ export default function Hero() {
       <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/60 via-transparent to-[#080406]/95 pointer-events-none" />
       <div className="absolute inset-0 z-20 bg-[radial-gradient(ellipse_at_center,_rgba(95,18,37,0.15)_0%,_transparent_70%)] pointer-events-none" />
 
+      {/* Top-Center Colossal Logo Lockup */}
+      <div className="absolute inset-x-0 top-0 z-20 flex justify-center pointer-events-none px-6 pt-8 sm:pt-10">
+        <Image
+          src="/images/logo-full.png"
+          alt="Colossal Hospitality and Entertainment Pvt Ltd"
+          width={896}
+          height={774}
+          priority
+          className="w-24 sm:w-28 md:w-32 lg:w-36 h-auto drop-shadow-[0_8px_40px_rgba(0,0,0,0.55)]"
+        />
+      </div>
+
       {/* Bottom Carousel Navigation Bar `<  01/04  >` */}
       <div className="absolute bottom-20 sm:bottom-24 md:bottom-16 inset-x-0 z-30 flex flex-col items-center justify-center gap-2.5 sm:gap-3 px-4">
         <div className="flex items-center gap-3 sm:gap-5 rounded-full border border-[#dfc18a]/40 bg-[#120408]/88 px-4 sm:px-6 py-1.5 sm:py-2 backdrop-blur-xl">

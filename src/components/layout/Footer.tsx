@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { footerNav, socialLinks, brands } from "@/lib/site-data";
 
@@ -24,8 +25,14 @@ export default function Footer() {
 
           {/* Brand Info & Socials */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <Link href="/" className="group flex items-center gap-2 font-luxury text-2xl tracking-[0.06em] text-[#faf5ee]">
-              <span className="h-2 w-2 rounded-full bg-[#dfc18a] transition-transform duration-300 group-hover:scale-150" />
+            <Link href="/" className="group flex items-center gap-2.5 font-luxury text-2xl tracking-[0.06em] text-[#faf5ee]">
+              <Image
+                src="/images/logo-mark.png"
+                alt=""
+                width={365}
+                height={488}
+                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+              />
               <span className="font-semibold">COLOSSAL</span>
               <span className="italic font-normal text-[#dfc18a]">Hospitality</span>
             </Link>

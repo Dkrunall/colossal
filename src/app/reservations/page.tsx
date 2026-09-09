@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { brands } from "@/lib/site-data";
+import { brands, brandDisplayName } from "@/lib/site-data";
 
 const CITIES = ["All Cities", "Mumbai", "Pune"] as const;
 
@@ -127,7 +127,7 @@ export default function ReservationsPage() {
                   <div className="mt-8 border-t border-[#6b162a] pt-5">
                     <button
                       type="button"
-                      onClick={() => setActiveModal(brand.name)}
+                      onClick={() => setActiveModal(brandDisplayName(brand))}
                       className="flex w-full items-center justify-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-[#faf5ec] hover:scale-[1.02] cursor-pointer"
                     >
                       <span>Reserve Table</span>

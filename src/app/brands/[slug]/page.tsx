@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
 import Plate from "@/components/ui/Plate";
 import Reveal from "@/components/motion/Reveal";
 import SplitHeading from "@/components/motion/SplitHeading";
 import Button from "@/components/ui/Button";
-import { brands } from "@/lib/site-data";
+import { brands, brandDisplayName } from "@/lib/site-data";
 import Link from "next/link";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -46,17 +47,36 @@ export default async function BrandPage({ params }: Props) {
 
         <Container className="relative z-10 grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#16060c]/85 px-4 py-1.5 mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#dfc18a]" />
-              <span className="eyebrow text-[#dfc18a]">
-                {brand.kind} {brand.city !== "Upcoming" && `· ${brand.city}`}
-              </span>
+            {/* Logo + Kind/City Pill — deliberately paired on one row */}
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              {brand.logoSrc && (
+                <div className="inline-flex items-center justify-center rounded-2xl border border-[#dfc18a]/25 bg-[#14060a] px-5 py-3 shadow-xl">
+                  <Image
+                    src={brand.logoSrc}
+                    alt={`${brand.name} logo`}
+                    width={200}
+                    height={100}
+                    className="h-10 sm:h-11 w-auto object-contain"
+                  />
+                </div>
+              )}
+
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#dfc18a]/40 bg-[#16060c]/85 px-4 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#dfc18a]" />
+                <span className="eyebrow text-[#dfc18a]">
+                  {brand.kind} {brand.city !== "Upcoming" && `· ${brand.city}`}
+                </span>
+              </div>
             </div>
 
             <SplitHeading
-              text={brand.name}
+              text={brandDisplayName(brand)}
               as="h1"
-              className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.08] text-gold-gradient"
+              className={`font-luxury font-normal tracking-[0.02em] leading-[1.08] text-gold-gradient ${
+                brand.logoSrc
+                  ? "text-2xl sm:text-3xl md:text-4xl"
+                  : "text-4xl sm:text-6xl md:text-7xl"
+              }`}
             />
 
             <Reveal delay={0.15} className="mt-6 max-w-[48ch] text-xl font-normal text-[#dfc18a]">
@@ -111,7 +131,7 @@ export default async function BrandPage({ params }: Props) {
                 tone={brand.tone}
                 imageSrc={brand.imageSrc}
                 ratio="aspect-[4/5]"
-                label={brand.name}
+                label={brandDisplayName(brand)}
                 caption={isUpcoming ? "Coming Soon" : "Featured Venue"}
               />
             </div>

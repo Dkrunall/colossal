@@ -35,7 +35,7 @@ export default function AwardsPage() {
           </div>
 
           <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient">
-            RECOGNITION, BRAND BY BRAND.
+            HONOURED FOR THE STANDARD WE HOLD.
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">

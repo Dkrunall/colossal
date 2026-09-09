@@ -96,6 +96,19 @@ export default function BrandsShowcase() {
                     </span>
                   </div>
 
+                  {/* Real Brand Logo Badge */}
+                  {brand.logoSrc && (
+                    <div className="absolute top-5 right-5 flex h-9 items-center justify-center rounded-lg border border-[#dfc18a]/25 bg-[#14060a] px-2 shadow-lg">
+                      <Image
+                        src={brand.logoSrc}
+                        alt=""
+                        width={120}
+                        height={60}
+                        className="h-5 w-auto object-contain"
+                      />
+                    </div>
+                  )}
+
                   {/* Bottom Content Overlay */}
                   <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end">
                     <h3 className="font-luxury text-2xl sm:text-3xl font-semibold tracking-[0.06em] text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">
