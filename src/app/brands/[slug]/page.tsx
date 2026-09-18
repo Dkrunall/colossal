@@ -139,6 +139,35 @@ export default async function BrandPage({ params }: Props) {
         </Container>
       </section>
 
+      {/* Photo Gallery */}
+      {brand.gallery && brand.gallery.length > 0 && (
+        <section className="border-t border-[#2d1118] bg-[#080406] py-20 md:py-28">
+          <Container>
+            <div className="border-b border-[#38141d] pb-6 mb-10">
+              <p className="eyebrow text-[#dfc18a]">Gallery</p>
+              <h2 className="font-luxury text-2xl md:text-3xl font-normal text-[#faf5ee]">
+                Inside {brandDisplayName(brand)}
+              </h2>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {brand.gallery.map((src, idx) => (
+                <Reveal key={src} delay={idx * 0.05} className={idx === 0 ? "sm:col-span-2 lg:col-span-2" : ""}>
+                  <div className="overflow-hidden rounded-2xl border border-[#38141d] bg-[#14060a] p-2">
+                    <Plate
+                      tone={brand.tone}
+                      imageSrc={src}
+                      ratio={idx === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}
+                      pending={false}
+                    />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* Portfolio Showcase Grid */}
       <section className="border-t border-[#2d1118] bg-[#0c0407] py-20 md:py-28">
         <Container>

@@ -16,6 +16,7 @@ export type Brand = {
   tone: "espresso" | "bronze" | "walnut" | "champagne";
   imageSrc?: string;
   logoSrc?: string; // real brand logo/wordmark, distinct from the venue photography in imageSrc
+  gallery?: string[]; // additional venue photography for gallery grids
 };
 
 // "Epitome" is shared across three portfolio entries (Mumbai, Pune,
@@ -39,8 +40,15 @@ export const brands: Brand[] = [
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "espresso",
-    imageSrc: "/images/fine_dining.png",
+    imageSrc: "/images/EpiMum1.png",
     logoSrc: "/images/logo-epitome.png",
+    gallery: [
+      "/images/EpiMum2.png",
+      "/images/EpiMum3.png",
+      "/images/EpiMum4.png",
+      "/images/EpiMum5.png",
+      "/images/EpiMum6.png",
+    ],
   },
   {
     slug: "epitome-pune",
@@ -54,8 +62,14 @@ export const brands: Brand[] = [
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "bronze",
-    imageSrc: "/images/hero_bg.png",
+    imageSrc: "/images/EpiPune1.jpg",
     logoSrc: "/images/logo-epitome.png",
+    gallery: [
+      "/images/EpiPune2.png",
+      "/images/EpiPune3.png",
+      "/images/EpiPune4.png",
+      "/images/EpiPune5.png",
+    ],
   },
   {
     slug: "kynd-cafe-bar-pune",
@@ -69,8 +83,9 @@ export const brands: Brand[] = [
     externalUrl: null,
     reservation: { type: "call", value: "+91 86000 80503" },
     tone: "champagne",
-    imageSrc: "/images/kynd_cafe.png",
+    imageSrc: "/images/Kynd1.png",
     logoSrc: "/images/logo-kynd.png",
+    gallery: ["/images/Kynd2.png", "/images/Kynd3.png", "/images/Kynd4.png"],
   },
   {
     slug: "epitome-live",
@@ -188,7 +203,7 @@ export const experiences = [
     title: "Day-to-Night at Kynd",
     description: "One room, two moods — considered coffee by day, a low-lit bar after dark.",
     tone: "champagne" as const,
-    imageSrc: "/images/kynd_cafe.png",
+    imageSrc: "/images/Kynd1.png",
   },
 ];
 
@@ -227,7 +242,7 @@ export const awards: { year: string; title: string; body: string }[] = [
 export interface Visionary {
   name: string;
   role: string;
-  imageSrc: string;
+  imageSrc?: string;
   bio?: string;
 }
 
@@ -238,12 +253,10 @@ export const visionaries: Visionary[] = [
   {
     name: "JIGAR SANGHVI",
     role: "Designation to be added",
-    imageSrc: "/images/jigar_sanghvi.jpg",
   },
   {
     name: "KRIPESH SANGHVI",
     role: "Designation to be added",
-    imageSrc: "/images/kripesh_sanghvi.jpg",
   },
 ];
 
@@ -251,17 +264,14 @@ export const aboutVisionaries: Visionary[] = [
   {
     name: "SHILPA SHETTY KUNDRA",
     role: "CO-FOUNDER",
-    imageSrc: "/images/visionary_founder.jpg",
   },
   {
     name: "RANJIT BINDRA",
     role: "FOUNDER & CEO",
-    imageSrc: "/images/visionary_director.jpg",
   },
   {
     name: "CHEF SAURABH",
     role: "EXECUTIVE PARTNER & CHEF",
-    imageSrc: "/images/visionary_partner.jpg",
   },
 ];
 

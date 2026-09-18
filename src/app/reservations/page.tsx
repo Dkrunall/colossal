@@ -21,7 +21,7 @@ export default function ReservationsPage() {
       {/* Reservations Hero Section */}
       <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#080406] flex items-center justify-center border-b border-[#2d1118]">
         <Image
-          src="/images/fine_dining.png"
+          src="/images/Kynd4.png"
           alt="Reservations Concierge"
           fill
           priority
