@@ -19,6 +19,8 @@ type PlateProps = {
   pending?: boolean;
   rounded?: boolean;
   imageSrc?: string;
+  blurred?: boolean;
+  comingSoon?: boolean;
 };
 
 export default function Plate({
@@ -30,6 +32,8 @@ export default function Plate({
   pending = true,
   rounded = true,
   imageSrc,
+  blurred = false,
+  comingSoon = false,
 }: PlateProps) {
   const [from, to] = TONES[tone] || TONES.espresso;
 
@@ -48,8 +52,20 @@ export default function Plate({
           alt={label ?? "Colossal Hospitality Visual"}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition-transform duration-700 group-hover/plate:scale-105"
+          className={`object-cover transition-transform duration-700 ${
+            blurred ? "scale-110 blur-md brightness-75" : "group-hover/plate:scale-105"
+          }`}
         />
+      )}
+
+      {comingSoon && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
+          <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+          <span className="font-luxury text-xl sm:text-2xl font-normal tracking-[0.3em] text-[#dfc18a]">
+            COMING SOON
+          </span>
+          <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+        </div>
       )}
 
       {/* Dark overlay gradient if image exists */}

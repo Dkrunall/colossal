@@ -141,7 +141,7 @@ export default function BrandsPage() {
                     src={brand.imageSrc || "/images/live_stage.png"}
                     alt={brand.name}
                     fill
-                    className="object-cover object-center brightness-[0.70]"
+                    className="scale-110 object-cover object-center brightness-[0.55] blur-md"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
 
@@ -164,6 +164,15 @@ export default function BrandsPage() {
                       />
                     </div>
                   )}
+
+                  {/* Centered Coming Soon Mark */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+                    <span className="font-luxury text-xl sm:text-2xl font-normal tracking-[0.3em] text-[#dfc18a]">
+                      COMING SOON
+                    </span>
+                    <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+                  </div>
 
                   <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
                     <h3 className="font-luxury text-2xl sm:text-3xl font-normal tracking-[0.04em] text-[#faf5ee]">

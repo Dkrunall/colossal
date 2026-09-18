@@ -133,6 +133,8 @@ export default async function BrandPage({ params }: Props) {
                 ratio="aspect-[4/5]"
                 label={brandDisplayName(brand)}
                 caption={isUpcoming ? "Coming Soon" : "Featured Venue"}
+                blurred={isUpcoming}
+                comingSoon={isUpcoming}
               />
             </div>
           </Reveal>
@@ -185,7 +187,14 @@ export default async function BrandPage({ params }: Props) {
             {otherBrands.map((b) => (
               <Link key={b.slug} href={`/brands/${b.slug}`} className="group block">
                 <div className="overflow-hidden rounded-2xl border border-[#38141d] bg-[#14060a] p-3 transition-all duration-300 group-hover:border-[#dfc18a]/60">
-                  <Plate tone={b.tone} imageSrc={b.imageSrc} label={b.name} ratio="aspect-[4/3]" />
+                  <Plate
+                    tone={b.tone}
+                    imageSrc={b.imageSrc}
+                    label={b.name}
+                    ratio="aspect-[4/3]"
+                    blurred={b.status === "upcoming"}
+                    comingSoon={b.status === "upcoming"}
+                  />
                   <div className="mt-4 px-2 pb-2">
                     <div className="flex items-center justify-between">
                       <p className="font-luxury text-xl font-normal text-[#faf5ee] transition-colors group-hover:text-[#dfc18a]">{b.name}</p>

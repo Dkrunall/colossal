@@ -18,6 +18,8 @@ export default function BrandTile({ brand }: { brand: Brand }) {
           caption={isUpcoming ? "Coming Soon" : "Outlet"}
           ratio="aspect-[4/5]"
           className="transition-transform duration-700 group-hover:scale-105"
+          blurred={isUpcoming}
+          comingSoon={isUpcoming}
         />
 
         {/* Badge Overlay */}

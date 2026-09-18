@@ -82,9 +82,23 @@ export default function BrandsShowcase() {
                     src={imageSrc}
                     alt={brand.name}
                     fill
-                    className="object-cover object-center brightness-[0.75] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                    className={
+                      isUpcoming
+                        ? "scale-110 object-cover object-center brightness-[0.55] blur-md"
+                        : "object-cover object-center brightness-[0.75] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-95"
+                    }
                     sizes="(max-width: 768px) 280px, 380px"
                   />
+
+                  {isUpcoming && (
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
+                      <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+                      <span className="font-luxury text-lg sm:text-xl font-normal tracking-[0.3em] text-[#dfc18a]">
+                        COMING SOON
+                      </span>
+                      <span className="h-px w-10 bg-[#dfc18a]/60" aria-hidden />
+                    </div>
+                  )}
 
                   {/* High Legibility Gradient Overlay with Deep Maroon Undertone */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#140207] via-[#140207]/50 to-transparent opacity-95" />
