@@ -269,11 +269,11 @@ export interface Visionary {
 export const visionaries: Visionary[] = [
   {
     name: "JIGAR SANGHVI",
-    role: "Designation to be added",
+    role: "DIRECTOR",
   },
   {
     name: "KRIPESH SANGHVI",
-    role: "Designation to be added",
+    role: "DIRECTOR",
   },
 ];
 
