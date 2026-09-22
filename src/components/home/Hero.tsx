@@ -14,7 +14,7 @@ const HERO_SLIDES = [
     id: "epitome-pune",
     name: "Epitome Pune",
     tagline: "Chef-Led Tasting Rooms & Bespoke Menus · Pune",
-    image: "/images/EpiPune2.png",
+    image: "/images/EpiPuneHero.png",
   },
   {
     id: "kynd-cafe",
@@ -26,7 +26,7 @@ const HERO_SLIDES = [
     id: "epitome-live",
     name: "Epitome Live",
     tagline: "Ticketed Nights & Curated DJ Line-Ups",
-    image: "/images/live_stage.png",
+    image: "/images/EpitomeLive.jpg",
   },
 ];
 

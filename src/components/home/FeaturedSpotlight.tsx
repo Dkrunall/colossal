@@ -16,7 +16,7 @@ const SPOTLIGHT_ITEMS = [
     category: "Chef's Table & Live Acoustics",
     description:
       "Chef's tables, private dining rooms and curated nights under the Epitome Live banner — built for guests who want more than a reservation.",
-    image: "/images/live_stage.png",
+    image: "/images/EpitomeLive.jpg",
     link: "/experiences",
     actionText: "Explore Experiences →",
   },

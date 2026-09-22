@@ -21,7 +21,7 @@ const SPACE_TYPES = [
     title: "FULL VENUE BUYOUTS",
     capacity: "80 to 250+ Guests",
     body: "The complete venue experience, customized entirely for brand launches, milestone events and private galas.",
-    imageSrc: "/images/live_stage.png",
+    imageSrc: "/images/EpitomeLive.jpg",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function BanquetsPage() {
       {/* Banquets Hero Section */}
       <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#080406] flex items-center justify-center border-b border-[#2d1118]">
         <Image
-          src="/images/EpiPune3.png"
+          src="/images/EpiPuneHero.png"
           alt="Colossal Banquets & Private Events"
           fill
           priority

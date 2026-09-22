@@ -138,7 +138,7 @@ export default function BrandsPage() {
                   className="group relative aspect-[3/4] overflow-hidden rounded-[2.2rem] border border-[#38141d] bg-[#14060a] transition-all duration-500 opacity-90"
                 >
                   <Image
-                    src={brand.imageSrc || "/images/live_stage.png"}
+                    src={brand.imageSrc || "/images/EpitomeLive.jpg"}
                     alt={brand.name}
                     fill
                     className="scale-110 object-cover object-center brightness-[0.55] blur-md"

@@ -15,7 +15,7 @@ export default function ExperiencesPage() {
       {/* Experiences Hero Section */}
       <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#080406] flex items-center justify-center border-b border-[#2d1118]">
         <Image
-          src="/images/EpiPune5.png"
+          src="/images/EpiPuneHero.png"
           alt="Curated Experiences"
           fill
           priority
@@ -51,7 +51,7 @@ export default function ExperiencesPage() {
           
           <div className="grid gap-10 sm:grid-cols-2">
             {experiences.map((exp, idx) => {
-              const imageSrc = idx % 2 === 0 ? "/images/fine_dining.png" : "/images/live_stage.png";
+              const imageSrc = idx % 2 === 0 ? "/images/fine_dining.png" : "/images/EpitomeLive.jpg";
               return (
                 <div
                   key={exp.title}

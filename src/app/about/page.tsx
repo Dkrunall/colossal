@@ -25,7 +25,7 @@ export default function AboutPage() {
       {/* About Page Hero Section */}
       <section className="relative h-[65vh] sm:h-[75vh] w-full overflow-hidden bg-[#080406] flex items-center justify-center border-b border-[#2d1118]">
         <Image
-          src="/images/EpiPune2.png"
+          src="/images/EpiPuneHero.png"
           alt="Colossal Hospitality Group"
           fill
           priority

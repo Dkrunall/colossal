@@ -62,7 +62,7 @@ export const brands: Brand[] = [
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "bronze",
-    imageSrc: "/images/EpiPune1.jpg",
+    imageSrc: "/images/EpiPuneHero.png",
     logoSrc: "/images/logo-epitome.png",
     gallery: [
       "/images/EpiPune2.png",
@@ -99,7 +99,7 @@ export const brands: Brand[] = [
     externalUrl: null,
     reservation: null,
     tone: "walnut",
-    imageSrc: "/images/live_stage.png",
+    imageSrc: "/images/EpitomeLive.jpg",
     logoSrc: "/images/logo-epitome.png",
   },
   {
@@ -197,7 +197,7 @@ export const experiences = [
     title: "Late Night, Curated",
     description: "DJ sets, guest chefs and one-off takeovers under the Epitome Live banner.",
     tone: "bronze" as const,
-    imageSrc: "/images/live_stage.png",
+    imageSrc: "/images/EpitomeLive.jpg",
   },
   {
     title: "Day-to-Night at Kynd",

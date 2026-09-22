@@ -63,7 +63,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 rounded-[2.5rem] border border-[#38141d] bg-[#14060a] p-8 sm:p-10 shadow-2xl space-y-8">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#38141d] bg-[#17060e]">
               <Image
-                src="/images/live_stage.png"
+                src="/images/EpitomeLive.jpg"
                 alt="Administrative Offices"
                 fill
                 className="object-cover object-center brightness-90"
