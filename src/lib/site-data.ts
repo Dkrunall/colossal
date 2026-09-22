@@ -48,6 +48,11 @@ export const brands: Brand[] = [
       "/images/EpiMum4.png",
       "/images/EpiMum5.png",
       "/images/EpiMum6.png",
+      "/images/EpiMum7.png",
+      "/images/EpiMum8.png",
+      "/images/EpiMum9.png",
+      "/images/EpiMum10.png",
+      "/images/EpiMum11.png",
     ],
   },
   {
@@ -69,6 +74,8 @@ export const brands: Brand[] = [
       "/images/EpiPune3.png",
       "/images/EpiPune4.png",
       "/images/EpiPune5.png",
+      "/images/EpiPune6.png",
+      "/images/EpiPune7.png",
     ],
   },
   {
@@ -85,7 +92,16 @@ export const brands: Brand[] = [
     tone: "champagne",
     imageSrc: "/images/Kynd1.png",
     logoSrc: "/images/logo-kynd.png",
-    gallery: ["/images/Kynd2.png", "/images/Kynd3.png", "/images/Kynd4.png"],
+    gallery: [
+      "/images/Kynd2.png",
+      "/images/Kynd3.png",
+      "/images/Kynd4.png",
+      "/images/Kynd5.png",
+      "/images/Kynd6.png",
+      "/images/Kynd7.png",
+      "/images/Kynd8.png",
+      "/images/Kynd9.png",
+    ],
   },
   {
     slug: "epitome-live",
@@ -101,6 +117,7 @@ export const brands: Brand[] = [
     tone: "walnut",
     imageSrc: "/images/EpitomeLive.jpg",
     logoSrc: "/images/logo-epitome.png",
+    gallery: ["/images/EpitomeLive2.png", "/images/EpitomeLounge1.png"],
   },
   {
     slug: "naia",
