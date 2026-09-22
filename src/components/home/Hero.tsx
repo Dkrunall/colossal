@@ -8,19 +8,19 @@ const HERO_SLIDES = [
     id: "epitome-mumbai",
     name: "Epitome Mumbai",
     tagline: "Fine Dining & Architectural Lounge · Lower Parel",
-    image: "/images/EpiMum1.png",
+    image: "/images/EpiMum8.png",
   },
   {
     id: "epitome-pune",
     name: "Epitome Pune",
     tagline: "Chef-Led Tasting Rooms & Bespoke Menus · Pune",
-    image: "/images/EpiPuneHero.png",
+    image: "/images/EpiPune6.png",
   },
   {
     id: "kynd-cafe",
     name: "Kynd Café & Bar",
     tagline: "All-Day Café to Low-Lit Night Lounge · Pune",
-    image: "/images/Kynd1.png",
+    image: "/images/Kynd8.png",
   },
   {
     id: "epitome-live",
