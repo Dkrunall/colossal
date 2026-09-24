@@ -213,7 +213,7 @@ export const pressMentions: PressMention[] = [
     topic: "Father's Day 2026",
   },
   {
-    outlet: "Instagram Feature",
+    outlet: "LBB Mumbai",
     url: "https://www.instagram.com/p/DaClYYcF2r1/?img_index=1&igsh=MWZwc2EydDFvaGV1NA==",
   },
   {
