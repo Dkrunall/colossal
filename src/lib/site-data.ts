@@ -68,7 +68,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "bronze",
     imageSrc: "/images/EpiPuneHero.png",
-    logoSrc: "/images/logo-epitome.png",
+    logoSrc: "/images/logo-epitome-pune.png",
     gallery: [
       "/images/EpiPune2.png",
       "/images/EpiPune3.png",
