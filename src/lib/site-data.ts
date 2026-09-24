@@ -116,7 +116,7 @@ export const brands: Brand[] = [
     reservation: null,
     tone: "walnut",
     imageSrc: "/images/EpitomeLive.jpg",
-    logoSrc: "/images/logo-epitome.png",
+    logoSrc: "/images/logo-epitome-live.png",
     gallery: ["/images/EpitomeLive2.png", "/images/EpitomeLounge1.png"],
   },
   {
