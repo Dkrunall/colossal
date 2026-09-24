@@ -195,7 +195,67 @@ export const snapshotStats = [
 
 export const pendingStats = ["Guests hosted annually", "Signature experiences"];
 
-export const pressMentions: string[] = [];
+export interface PressMention {
+  outlet: string;
+  url: string;
+  topic?: string;
+}
+
+export const pressMentions: PressMention[] = [
+  { outlet: "The Gourmet Edit", url: "https://www.instagram.com/p/DZrVCWoE4uW/" },
+  {
+    outlet: "Curly Tales",
+    url: "https://www.instagram.com/p/DZrb5mqCkh7/?img_index=5&igsh=MXdoeGt1cGExYTFtOA%3D%3D",
+  },
+  {
+    outlet: "Free Press Journal",
+    url: "https://www.freepressjournal.in/lifestyle/fathers-day-2026-in-mumbai-from-pizza-making-to-boozy-brunches-heres-where-to-take-your-dad",
+    topic: "Father's Day 2026",
+  },
+  {
+    outlet: "Instagram Feature",
+    url: "https://www.instagram.com/p/DaClYYcF2r1/?img_index=1&igsh=MWZwc2EydDFvaGV1NA==",
+  },
+  {
+    outlet: "Femina",
+    url: "https://www.femina.in/travel/domestic/mothers-day-2026-24-best-mumbai-restaurants-for-brunch-lunch-dinner-290051-1.html",
+    topic: "Mother's Day 2026",
+  },
+  {
+    outlet: "The Gourmet Edit",
+    url: "https://thegourmetedit.com/best-monsoon-menus-across-india/",
+    topic: "Monsoon Menu",
+  },
+  {
+    outlet: "The Chaptre Mag",
+    url: "https://www.instagram.com/p/Dac--dGCM6K/?img_index=7&igsh=YXo5amVwaDNpMWk5",
+    topic: "World Chocolate Day",
+  },
+  {
+    outlet: "Story Board",
+    url: "https://www.instagram.com/p/Dae0yCXjBGD/?img_index=1&igsh=MThxYmtwNjhqMmNqcg==",
+    topic: "World Chocolate Day",
+  },
+  {
+    outlet: "Unstumbled",
+    url: "https://theunstumbled.com/monsoon-special-menus-in-mumbai-restaurants-you-can-try-this-season/",
+    topic: "Monsoon Menu",
+  },
+  {
+    outlet: "News18",
+    url: "https://www.news18.com/lifestyle/food/world-chocolate-day-mumbai-restaurants-to-visit-where-chocolate-takes-centre-stage-10182498.html",
+    topic: "World Chocolate Day",
+  },
+  {
+    outlet: "Luxebook",
+    url: "https://luxebook.in/world-chocolate-day-all-about-artisanal-chocolate/",
+    topic: "World Chocolate Day",
+  },
+  {
+    outlet: "The Blended Stories",
+    url: "https://www.instagram.com/p/DbaN1R_jYN3/?img_index=19&igsh=MW1rdjlmc3BrbmhsYw==",
+  },
+];
 
 export const experiences = [
   {

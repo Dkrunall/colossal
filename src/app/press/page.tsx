@@ -68,25 +68,31 @@ export default function PressPage() {
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {pressMentions.map((mention, idx) => (
-              <div
+              <a
                 key={idx}
+                href={mention.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col justify-between rounded-[2.2rem] border border-[#38141d] bg-[#14060a] p-8 transition-all duration-500 hover:border-[#dfc18a]/60"
               >
                 <div>
                   <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
-                    MEDIA COVERAGE
+                    {mention.topic ?? "MEDIA COVERAGE"}
                   </span>
                   <h3 className="font-luxury text-2xl font-normal text-[#faf5ee] mt-3 transition-colors group-hover:text-[#dfc18a]">
-                    "{mention}"
+                    {mention.outlet}
                   </h3>
                 </div>
 
-                <div className="mt-8 border-t border-[#38141d] pt-5">
+                <div className="mt-8 flex items-center justify-between border-t border-[#38141d] pt-5">
                   <span className="text-xs font-light text-[#baa89f]">
                     Colossal Media Archives
                   </span>
+                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#dfc18a] transition-transform group-hover:translate-x-1">
+                    Read →
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 

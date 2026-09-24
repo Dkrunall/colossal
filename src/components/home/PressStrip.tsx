@@ -14,7 +14,7 @@ export default function PressStrip() {
           Press &amp; Media →
         </a>
       </Container>
-      <Marquee items={pressMentions} />
+      <Marquee items={pressMentions.map((m) => m.outlet)} />
     </section>
   );
 }
