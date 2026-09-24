@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Brand Info & Socials */}
           <div className="sm:col-span-2 lg:col-span-2">
-            <Link href="/" className="group flex items-center gap-2.5 font-luxury text-2xl tracking-[0.06em] text-[#faf5ee]">
+            <Link href="/" className="group flex items-center gap-2.5 font-luxury text-2xl tracking-[0.06em]">
               <Image
                 src="/images/logo-mark.png"
                 alt=""
@@ -33,8 +33,8 @@ export default function Footer() {
                 height={488}
                 className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="font-semibold">COLOSSAL</span>
-              <span className="italic font-normal text-[#dfc18a]">Hospitality</span>
+              <span className="font-semibold text-gold-gradient">COLOSSAL</span>
+              <span className="italic font-normal text-gold-gradient">Hospitality</span>
             </Link>
 
             <p className="mt-4 max-w-[34ch] text-xs sm:text-sm leading-relaxed text-[#e2d5ce] font-light">
