@@ -268,7 +268,7 @@ export const experiences = [
     title: "Private Dining Rooms",
     description: "Closed-door rooms across the portfolio, built for the conversations that need one.",
     tone: "walnut" as const,
-    imageSrc: "/images/hero_bg.png",
+    imageSrc: "/images/EpitomePrivateLounge.jpg",
   },
   {
     title: "Late Night, Curated",

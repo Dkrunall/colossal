@@ -50,8 +50,8 @@ export default function ExperiencesPage() {
         <div className="mx-auto max-w-[1560px] px-6 md:px-12">
           
           <div className="grid gap-10 sm:grid-cols-2">
-            {experiences.map((exp, idx) => {
-              const imageSrc = idx % 2 === 0 ? "/images/fine_dining.png" : "/images/EpitomeLive.jpg";
+            {experiences.map((exp) => {
+              const imageSrc = exp.imageSrc;
               return (
                 <div
                   key={exp.title}
