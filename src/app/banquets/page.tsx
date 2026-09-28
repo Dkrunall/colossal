@@ -186,9 +186,9 @@ export default function BanquetsPage() {
 
                 <Link
                   href="/contact"
-                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] py-3.5 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-lg transition-all duration-300 hover:bg-[#f4e0b5] hover:scale-[1.02]"
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-[#dfc18a] bg-[#dfc18a] px-4 py-3.5 text-center text-[0.68rem] sm:text-xs font-bold uppercase leading-snug tracking-[0.08em] sm:tracking-[0.2em] text-black shadow-lg transition-all duration-300 hover:bg-[#f4e0b5] hover:scale-[1.02]"
                 >
-                  <span>Start {selectedEvent} Inquiry →</span>
+                  <span>{selectedEvent} Inquiry →</span>
                 </Link>
               </div>
             </div>
