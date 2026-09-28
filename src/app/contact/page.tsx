@@ -46,8 +46,8 @@ export default function ContactPage() {
 
       {/* Main Contact Form & Details Section */}
       <section className="py-24 md:py-32 border-b border-[#2d1118]">
-        <div className="mx-auto max-w-[1560px] px-6 md:px-12 grid gap-12 lg:grid-cols-12 lg:items-start">
-          
+        <div className="mx-auto max-w-[1560px] px-6 md:px-12 grid gap-12 lg:grid-cols-12 lg:items-stretch">
+
           {/* Form Block */}
           <div className="lg:col-span-7 rounded-[2.5rem] border border-[#38141d] bg-[#14060a] p-8 sm:p-12 shadow-2xl">
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.26em] text-[#dfc18a]">
@@ -59,51 +59,15 @@ export default function ContactPage() {
             <ContactForm />
           </div>
 
-          {/* Concierge Info Side Card */}
-          <div className="lg:col-span-5 rounded-[2.5rem] border border-[#38141d] bg-[#14060a] p-8 sm:p-10 shadow-2xl space-y-8">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#38141d] bg-[#17060e]">
-              <Image
-                src="/images/EpitomeLive.jpg"
-                alt="Administrative Offices"
-                fill
-                className="object-cover object-center brightness-90"
-              />
-            </div>
-
-            <div className="space-y-6 text-sm">
-              <div className="border-b border-[#38141d] pb-5">
-                <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
-                  CORPORATE HEADQUARTERS
-                </span>
-                <h3 className="font-luxury text-xl font-normal text-[#faf5ee] mt-1">
-                  COLOSSAL HOSPITALITY GROUP
-                </h3>
-                <p className="mt-1 text-xs text-[#baa89f] font-light">
-                  Mumbai &amp; Pune Administrative Offices, India
-                </p>
-              </div>
-
-              <div className="border-b border-[#38141d] pb-5">
-                <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
-                  DIRECT CHANNELS
-                </span>
-                <p className="mt-2 text-xs sm:text-sm text-[#baa89f] font-light">
-                  General Inquiries: <span className="text-[#faf5ee] font-normal">info@colossalhospitality.com</span>
-                </p>
-                <p className="mt-1 text-xs sm:text-sm text-[#baa89f] font-light">
-                  Press &amp; Media: <span className="text-[#faf5ee] font-normal">press@colossalhospitality.com</span>
-                </p>
-              </div>
-
-              <div>
-                <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-[#dfc18a]">
-                  CONCIERGE HOURS
-                </span>
-                <p className="mt-2 text-xs sm:text-sm text-[#baa89f] font-light">
-                  Monday – Saturday, 10:00 AM – 7:00 PM IST
-                </p>
-              </div>
-            </div>
+          {/* Concierge Visual */}
+          <div className="lg:col-span-5 relative min-h-[420px] w-full overflow-hidden rounded-[2.5rem] border border-[#38141d] bg-[#17060e] shadow-2xl">
+            <Image
+              src="/images/Kynd3.jpg"
+              alt="Colossal Hospitality"
+              fill
+              className="object-cover object-center brightness-90"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
           </div>
 
         </div>
