@@ -62,10 +62,10 @@ export default function AboutPage() {
           {/* Left Widescreen Image Plate */}
           <div className="lg:col-span-5 relative aspect-[4/5] rounded-[2.2rem] overflow-hidden border border-[#6b162a] bg-[#250711] shadow-2xl group">
             <Image
-              src="/images/EpitomeDiningRoom.jpg"
+              src="/images/EpiMum10.png"
               alt="Group Dining Room"
               fill
-              className="object-cover object-center brightness-90 transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-[30%_center] brightness-90 transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 40vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#140207]/80 via-transparent to-transparent pointer-events-none" />
