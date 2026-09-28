@@ -20,7 +20,7 @@ const HERO_SLIDES = [
     id: "kynd-cafe",
     name: "Kynd Café & Bar",
     tagline: "All-Day Café to Low-Lit Night Lounge · Pune",
-    image: "/images/Kynd8.png",
+    image: "/images/Kynd1.jpg",
   },
   {
     id: "epitome-live",

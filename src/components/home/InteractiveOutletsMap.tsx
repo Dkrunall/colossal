@@ -61,7 +61,7 @@ const OUTLETS: MapOutlet[] = [
     concept: "All-Day Café & Intimate Evening Bar",
     address: "Lane 6, Koregaon Park, Pune",
     timings: "8:30 AM – 12:30 AM Daily",
-    imageSrc: "/images/Kynd1.png",
+    imageSrc: "/images/Kynd1.jpg",
     slug: "kynd-cafe-bar-pune",
     phone: "+918600080503",
     lat: 18.5362,
