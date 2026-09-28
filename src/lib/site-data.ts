@@ -40,7 +40,7 @@ export const brands: Brand[] = [
     externalUrl: "https://epitomeglobaldining.com/",
     reservation: null,
     tone: "espresso",
-    imageSrc: "/images/EpitomeMumbaiHero.jpg",
+    imageSrc: "/images/EpiMum1.png",
     logoSrc: "/images/logo-epitome.png",
     gallery: [
       "/images/EpiMum2.png",
