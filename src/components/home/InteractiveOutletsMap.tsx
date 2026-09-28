@@ -31,7 +31,7 @@ const OUTLETS: MapOutlet[] = [
     concept: "Fine Dining & Bar",
     address: "Mathuradas Mill Compound, NM Joshi Marg, Lower Parel, Mumbai",
     timings: "12:00 PM – 1:30 AM Daily",
-    imageSrc: "/images/EpiMum1.png",
+    imageSrc: "/images/EpitomeCorrectBrand1.png",
     slug: "epitome-mumbai",
     phone: "+919999999999",
     lat: 18.9953,
