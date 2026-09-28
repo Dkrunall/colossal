@@ -30,7 +30,7 @@ export default function ReservationsPage() {
         />
         
         {/* Luxury Vignette Overlays with Maroon Ambient Hue */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080406] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080406] via-black/60 to-black/75 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#68152a]/15 blur-[150px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
@@ -41,11 +41,11 @@ export default function ReservationsPage() {
             </span>
           </div>
 
-          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient">
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
             PICK A ROOM. WE'LL POINT YOU THERE.
           </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
+          <p className="mt-6 max-w-2xl mx-auto text-sm md:text-base font-normal text-[#ede3d6] leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
             Select your destination below for instant direct-channel access — WhatsApp concierge, a phone line, or the venue's own booking platform.
           </p>
         </div>

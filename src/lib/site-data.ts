@@ -135,7 +135,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "khufe",
-    name: "Khufè",
+    name: "Khufë",
     city: "Upcoming",
     kind: "New Concept",
     tagline: "Launch TBA.",

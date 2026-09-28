@@ -7,15 +7,15 @@ const SPOTLIGHT_ITEMS = [
     category: "Private Dining & Grand Celebrations",
     description:
       "From an eight-seat private suite to a full venue buyout, every Colossal address is available for private dining, corporate dinners and milestone celebrations.",
-    image: "/images/fine_dining.png",
+    image: "/images/banquet_hall.jpg",
     link: "/banquets",
     actionText: "Explore Banquets →",
   },
   {
     title: "CURATED EXPERIENCES",
-    category: "Chef's Table & Live Acoustics",
+    category: "Epitome Live · Live Music & DJ Nights",
     description:
-      "Chef's tables, private dining rooms and curated nights under the Epitome Live banner — built for guests who want more than a reservation.",
+      "Ticketed nights, live acoustic sets and curated DJ line-ups under the Epitome Live banner — built for guests who want more than a reservation.",
     image: "/images/EpitomeLive.jpg",
     link: "/experiences",
     actionText: "Explore Experiences →",

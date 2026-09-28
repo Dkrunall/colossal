@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { footerNav, socialLinks, brands } from "@/lib/site-data";
+import { footerNav, socialLinks, brands, brandDisplayName } from "@/lib/site-data";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -82,7 +82,7 @@ export default function Footer() {
               {brands.map((b) => (
                 <li key={b.slug}>
                   <Link href={`/brands/${b.slug}`} className="text-xs sm:text-sm font-light text-[#f4e0b5]/85 transition-colors hover:text-[#dfc18a]">
-                    {b.name}
+                    {brandDisplayName(b)}
                   </Link>
                 </li>
               ))}

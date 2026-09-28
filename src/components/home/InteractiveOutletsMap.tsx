@@ -46,7 +46,7 @@ const OUTLETS: MapOutlet[] = [
     concept: "Fine Dining & Bar",
     address: "Pune, Maharashtra",
     timings: "12:00 PM – 1:30 AM Daily",
-    imageSrc: "/images/EpiPuneHero.png",
+    imageSrc: "/images/EpitomeCorrectBrand1.png",
     slug: "epitome-pune",
     phone: "+919999999999",
     lat: 18.5204,

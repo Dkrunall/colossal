@@ -9,7 +9,7 @@ const SPACE_TYPES = [
     title: "PRIVATE DINING SUITES",
     capacity: "8 to 24 Guests",
     body: "Closed-door architectural suites built for private celebrations, leadership dinners and exclusive gatherings.",
-    imageSrc: "/images/fine_dining.png",
+    imageSrc: "/images/banquet_hall.jpg",
   },
   {
     title: "SEMI-PRIVATE LOUNGES",
@@ -45,7 +45,7 @@ export default function BanquetsPage() {
         />
         
         {/* Luxury Vignette Overlays with Maroon Ambient Hue */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080406] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080406] via-black/60 to-black/75 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[#68152a]/15 blur-[150px] pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
@@ -56,11 +56,11 @@ export default function BanquetsPage() {
             </span>
           </div>
 
-          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient">
+          <h1 className="font-luxury text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.02em] leading-[1.12] text-gold-gradient drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
             BOOK THE WHOLE ROOM, NOT JUST A TABLE.
           </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light text-[#baa89f] leading-relaxed">
+          <p className="mt-6 max-w-2xl mx-auto text-sm md:text-base font-normal text-[#ede3d6] leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
             From an eight-seat private dining suite to a full venue buyout — every Colossal venue is available for bespoke private hospitality and milestone occasions.
           </p>
         </div>
