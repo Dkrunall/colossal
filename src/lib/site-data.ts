@@ -323,9 +323,7 @@ export interface Visionary {
   bio?: string;
 }
 
-// Per the client-supplied website copy, the Home page and About page
-// "Our Visionaries" sections list different people — reproduced here
-// as two separate lists rather than reconciled into one.
+// Shared by both the Home and About page "Our Visionaries" sections.
 export const visionaries: Visionary[] = [
   {
     name: "JIGAR SANGHVI",
@@ -334,21 +332,6 @@ export const visionaries: Visionary[] = [
   {
     name: "KRIPESH SANGHVI",
     role: "DIRECTOR",
-  },
-];
-
-export const aboutVisionaries: Visionary[] = [
-  {
-    name: "SHILPA SHETTY KUNDRA",
-    role: "CO-FOUNDER",
-  },
-  {
-    name: "RANJIT BINDRA",
-    role: "FOUNDER & CEO",
-  },
-  {
-    name: "CHEF SAURABH",
-    role: "EXECUTIVE PARTNER & CHEF",
   },
 ];
 

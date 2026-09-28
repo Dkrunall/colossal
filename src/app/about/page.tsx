@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VisionariesSection from "@/components/home/VisionariesSection";
 import Snapshot from "@/components/home/Snapshot";
-import { aboutVisionaries } from "@/lib/site-data";
+import { visionaries } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About Us · Colossal Hospitality Group",
@@ -155,7 +155,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership & Visionaries Grid */}
-      <VisionariesSection people={aboutVisionaries} />
+      <VisionariesSection people={visionaries} />
 
       {/* Group Snapshot Numbers */}
       <Snapshot />
